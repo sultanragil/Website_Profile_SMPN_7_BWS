@@ -8,6 +8,16 @@
 # 
 # Klien : 
 # - Dwi Putri Wahyuni Hamsin ( SMPN 7 Bondowoso )
+# 
+# Cara Menggunakan : 
+# 
+# Composer + PHP ( Xampp ) sudah terinstall
 #
+# 1. Buka Terminal Laravel
+# 2. Run Command 'composer install'
+# 3. Selanjutnya 'cp .env.example .env'
+# 4. Lalu 'php artisan key:generate'
+#
+# NB : command diatas dijalankan tanpa tanda petik ( '' )
 #
 #
