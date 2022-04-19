@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['namespace'=>'Backend'], function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::resource('/', '\App\Http\Controllers\Backend\IndexController');
+
+    });
+});
