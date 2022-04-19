@@ -38,7 +38,7 @@
 
 <body>
 
-    <main id="main" class="main">
+    <main>
 
         @yield('login')
 
