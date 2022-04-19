@@ -28,7 +28,7 @@
 
                     <div class="col-12">
                         <label for="yourPassword" class="form-label">Password</label>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <input id="password" type="password" class="form-control" name="password" required>
                             <div class="invalid-feedback">Please enter your password!</div>
                         </div>
