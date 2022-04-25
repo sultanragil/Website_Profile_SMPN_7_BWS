@@ -1,44 +1,46 @@
 @extends('backend.layouts.template')
 
 @section('actdash')
-    <a class="nav-link " href="{{ route('index') }}">  
+    <a class="nav-link " href="{{ route('index') }}">
 @endsection
 
 @section('actberita')
-    <a class="nav-link collapsed" href="{{ route('berita.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('berita.index') }}">
 @endsection
 
 @section('actcar')
-    <a class="nav-link collapsed" href="{{ route('carousel.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('carousel.index') }}">
 @endsection
 
 @section('actdata')
-    <a class="nav-link collapsed" href="{{ route('data.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('data.index') }}">
 @endsection
 
 @section('actevent')
-    <a class="nav-link collapsed" href="{{ route('event.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('event.index') }}">
 @endsection
 
 @section('actkontak')
-    <a class="nav-link collapsed" href="{{ route('kontak.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('kontak.index') }}">
 @endsection
 
 @section('actmatpel')
-    <a class="nav-link collapsed" href="{{ route('matpel.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('matpel.index') }}">
 @endsection
 
 @section('actpegawai')
-    <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">
 @endsection
 
 @section('actsarana')
-    <a class="nav-link collapsed" href="{{ route('sarana.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('sarana.index') }}">
 @endsection
 
+@if(Auth::user()->role == "super admin")
 @section('actuser')
-    <a class="nav-link collapsed" href="{{ route('user.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('user.index') }}">
 @endsection
+@endif
 
 @section('dashboard')
 <div class="pagetitle">
@@ -324,7 +326,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Line Chart</h5>
-  
+
               <!-- Line Chart -->
               <canvas id="lineChart" style="max-height: 400px;"></canvas>
               <script>
@@ -352,14 +354,14 @@
                 });
               </script>
               <!-- End Line CHart -->
-  
+
             </div>
           </div>
-  
+
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Pie Chart</h5>
-  
+
               <!-- Pie Chart -->
               <canvas id="pieChart" style="max-height: 400px;"></canvas>
               <script>
@@ -387,7 +389,7 @@
                 });
               </script>
               <!-- End Pie CHart -->
-  
+
             </div>
           </div>
         </div>
@@ -454,5 +456,5 @@
 
     </div>
   </section>
-    
+
 @endsection

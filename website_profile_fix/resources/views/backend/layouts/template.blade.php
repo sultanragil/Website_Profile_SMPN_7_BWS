@@ -356,9 +356,8 @@
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
-      @if(Auth::user()->role == "super admin")
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('user.index')}}">
         @yield('actcar')
           <i class="bi bi-aspect-ratio-fill"></i>
           <span>Carousel</span>
@@ -371,8 +370,7 @@
           <span>User</span>
         </a>
       </li><!-- End User Page Nav -->
-      @else
-      @endif
+
 
     </ul>
 
