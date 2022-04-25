@@ -16,10 +16,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()->role == 0){
+        if(auth()->user()->role == "super admin"){
             return $next($request);
         }
 
-        return redirect('home')->with('error',"You don't have admin access.");
+        return redirect('dashboard')->with('error',"You don't have admin access.");
     }
 }
