@@ -1,11 +1,51 @@
 @extends('backend.layouts.template')
 
+@section('actdash')
+    <a class="nav-link " href="{{ route('index') }}">  
+@endsection
+
+@section('actberita')
+    <a class="nav-link collapsed" href="{{ route('berita.index') }}">  
+@endsection
+
+@section('actcar')
+    <a class="nav-link collapsed" href="{{ route('carousel.index') }}">  
+@endsection
+
+@section('actdata')
+    <a class="nav-link collapsed" href="{{ route('data.index') }}">  
+@endsection
+
+@section('actevent')
+    <a class="nav-link collapsed" href="{{ route('event.index') }}">  
+@endsection
+
+@section('actkontak')
+    <a class="nav-link collapsed" href="{{ route('kontak.index') }}">  
+@endsection
+
+@section('actmatpel')
+    <a class="nav-link collapsed" href="{{ route('matpel.index') }}">  
+@endsection
+
+@section('actpegawai')
+    <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">  
+@endsection
+
+@section('actsarana')
+    <a class="nav-link collapsed" href="{{ route('sarana.index') }}">  
+@endsection
+
+@section('actuser')
+    <a class="nav-link collapsed" href="{{ route('user.index') }}">  
+@endsection
+
 @section('dashboard')
 <div class="pagetitle">
     <h1>Dashboard</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>

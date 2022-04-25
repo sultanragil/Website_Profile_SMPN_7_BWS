@@ -43,7 +43,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ route('index') }}" class="logo d-flex align-items-center">
         <img src="{{ asset('backend/assets/img/logo.png') }}" alt="">
         <span class="d-none d-lg-block">SMPN7 Admin</span>
       </a>
@@ -270,7 +270,8 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+          @yield('actdash')
+          @yield('nonactdash')
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -307,49 +308,50 @@
       <li class="nav-heading">Data Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        @yield('actpegawai')
           <i class="bi bi-people-fill"></i>
           <span>Pegawai & Karyawan</span>
         </a>
       </li><!-- End Pegawai & Karyawan Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        @yield('actsarana')
           <i class="ri-community-fill"></i>
           <span>Sarana & Prasarana</span>
         </a>
       </li><!-- End Sarana & Prasarana Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        @yield('actberita')
           <i class="bi bi-calendar-check-fill"></i>
           <span>Berita & Prestasi</span>
         </a>
       </li><!-- End Berita & Prestasi Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        @yield('actmatpel')
           <i class="bi bi-book-fill"></i>
           <span>Mata Pelajaran</span>
         </a>
       </li><!-- End Mata Pelajaran Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
+        @yield('actevent')
           <i class="bi bi-journal-bookmark-fill"></i>
           <span>Event</span>
         </a>
       </li><!-- End Event Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
+        @yield('actdata')
           <i class="ri-database-2-fill"></i>
           <span>Data Siswa</span>
         </a>
       </li><!-- End Data Siswa Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        @yield('actkontak')
+        @yield('nonactkontak')
           <i class="bi bi-envelope-fill"></i>
           <span>Contact</span>
         </a>
@@ -357,6 +359,14 @@
       @if(Auth::user()->role == "super admin")
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('user.index')}}">
+        @yield('actcar')
+          <i class="bi bi-aspect-ratio-fill"></i>
+          <span>Carousel</span>
+        </a>
+      </li><!-- End Carousel Page Nav -->
+
+      <li class="nav-item">
+        @yield('actuser')
           <i class="bi bi-person-plus-fill"></i>
           <span>User</span>
         </a>
@@ -371,6 +381,7 @@
   <main id="main" class="main">
 
     @yield('dashboard')
+    @yield('content')
 
   </main><!-- End #main -->
 

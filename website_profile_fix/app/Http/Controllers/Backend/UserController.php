@@ -68,4 +68,5 @@ class UserController extends Controller
         DB::table('users')->where('id',$id)->delete();
         return redirect()->route('user.index')->with('success','Data Creator Berhasil Dihapus');
     }
+
 }
