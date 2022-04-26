@@ -1,5 +1,9 @@
 @extends('backend.layouts.template')
 
+@section('title')
+    <title>Dashboard - Pegawai </title>
+@endsection
+
 @section('actdash')
     <a class="nav-link collapsed" href="{{ route('index') }}">  
 @endsection

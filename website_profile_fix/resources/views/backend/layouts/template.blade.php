@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  @yield('title')
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -203,7 +203,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{ asset('backend/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+            <img src="{{ asset('backend/assets/img/anon100px.png') }}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -364,12 +364,15 @@
         </a>
       </li><!-- End Carousel Page Nav -->
 
+      @if (Auth::user()->role == "super admin")
       <li class="nav-item">
         @yield('actuser')
           <i class="bi bi-person-plus-fill"></i>
           <span>User</span>
         </a>
       </li><!-- End User Page Nav -->
+      @endif
+      
 
 
     </ul>

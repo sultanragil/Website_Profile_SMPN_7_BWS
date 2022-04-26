@@ -20,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $id = Auth::user()->id;
-        $user = DB::table('users')->where('role', 'admin')->get();
+        $user = DB::table('users')->where('role', 'admin')->paginate(5);
         return view('backend.user.index',compact('user'));
     }
     public function create()

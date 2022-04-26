@@ -1,5 +1,9 @@
 @extends('backend.layouts.template')
 
+@section('title')
+    <title>Dashboard - Landing Page </title>
+@endsection
+
 @section('actdash')
     <a class="nav-link " href="{{ route('index') }}">
 @endsection
@@ -36,11 +40,11 @@
     <a class="nav-link collapsed" href="{{ route('sarana.index') }}">
 @endsection
 
-@if(Auth::user()->role == "super admin")
+
 @section('actuser')
     <a class="nav-link collapsed" href="{{ route('user.index') }}">
 @endsection
-@endif
+
 
 @section('dashboard')
 <div class="pagetitle">

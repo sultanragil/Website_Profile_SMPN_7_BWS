@@ -1,18 +1,9 @@
 @extends('backend.layouts.template')
 
-@section('dashboard')
-<div class="pagetitle">
-    <h1>Data Tables</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Tables</li>
-        <li class="breadcrumb-item active">Data</li>
-      </ol>
-    </nav>
-</div><!-- End Page Title -->
+@section('title')
+    <title>Dashboard - User </title>
+@endsection
 
-<section class="section">
 @section('actdash')
     <a class="nav-link collapsed" href="{{ route('index') }}">
 @endsection
@@ -56,75 +47,78 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Data User</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item active">User</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
+  <h1>Data User</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+      <li class="breadcrumb-item active">User</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-  <section class="section">
-    <div class="row">
-      <div class="col-lg-12">
+<section class="section">
+  <div class="row">
+    <div class="col-lg-12">
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Datatables</h5>
-            <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Data User</h5>
 
-            <!-- Table with stripped rows -->
-            <table class="table datatable">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Role</th>
-                  <th scope="col">Start Date</th>
-                  <th scope="col">Perintah</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($user as $item)
-                <tr>
-                  <td>
-                      {{$item->id}}
-                  </td>
-                  <td>
-                      {{$item->name}}
-                  </td>
-                  <td>
-                      {{$item->email}}
-                  </td>
-                  <td>
-                      {{$item->role}}
-                  </td>
-                  <td>
-                      {{$item->created_at}}
-                  </td>
-                  <td>
-                    <a href="{{ route('user.edit',$item->id) }}"><button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary ri-edit-2-fill">
-                    </button></a>
-                    <form action="{{ route('user.destroy',$item->id) }}" method="POST">
+          <!-- Table Data User -->
+          <table class="table table-hover">
+            <thead>
+              <tr class="table-light">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($user as $item)
+              <tr class="table-light">
+                <th scope="row">{{$item->id}}</th>
+                <td>{{$item->name}}</td>
+                <td>{{$item->email}}</td>
+                <td>{{$item->role}}</td>
+                <td>{{$item->created_at}}</td>
+                <td>
+                  <div class="row">
+                    <div class="col-3">
+                      <a href="{{ route('user.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
+                    </div>
+                    <div class="col-3">
+                      <form action="{{ route('user.destroy',$item->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" rel="tooltip" title="Remove" class="btn btn-danger ri-delete-back-2-line" onclick="return confirm('Yakin akan menghapus data?')">
-                        </button>
-                    </form>
-                  </td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-            <a href="{{ route('user.create') }}"><button type="button" class="btn btn-info">tambah</button></a>
-            <!-- End Table with stripped rows -->
+                        <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus data?')"><i class="bi bi-trash-fill"></i></button>
+                      </form>
+                    </div>
+                  </div>
+                  
+                </td>
+              </tr> 
+              @endforeach
+            </tbody>
+          </table>
 
-          </div>
+          <!-- Centered Pagination -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <div class="col-1">
+                {!! $user->links()!!}
+              </div>
+            </ul>
+          </nav><!-- End Centered Pagination -->
+
+          <a href="{{ route('user.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
+        
         </div>
-
       </div>
     </div>
+  </div>
 </section>
+
 @endsection
