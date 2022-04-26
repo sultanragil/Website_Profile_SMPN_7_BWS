@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Kontak </title>
+    <title>Dashboard - Sarana </title>
 @endsection
 
 @section('actdash')
@@ -25,7 +25,7 @@
 @endsection
 
 @section('actkontak')
-    <a class="nav-link " href="{{ route('kontak.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('kontak.index') }}">  
 @endsection
 
 @section('actmatpel')
@@ -37,7 +37,7 @@
 @endsection
 
 @section('actsarana')
-    <a class="nav-link collapsed" href="{{ route('sarana.index') }}">  
+    <a class="nav-link " href="{{ route('sarana.index') }}">  
 @endsection
 
 @section('actuser')
@@ -47,11 +47,11 @@
 @section('content')
     
 <div class="pagetitle">
-    <h1>Data Kontak</h1>
+    <h1>Data Sarana & Prasarana</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item active">Kontak</li>
+        <li class="breadcrumb-item active">Sarana & Prasarana</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -62,78 +62,58 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Data Kontak</h5>
+            <h5 class="card-title">Data Sarana & Prasarana</h5>
 
-            <!-- Table Data Kontak -->
+            <!-- Table Data Sarana & Prasarana -->
             <table class="table table-hover">
               <thead>
                 <tr class="table-light">
-                  <th scope="col">No</th>
-                  <th scope="col">Jenis Kontak</th>
-                  <th scope="col">Nama Kontak</th>
-                  <th scope="col">Link</th>
-                  <th scope="col">Logo</th>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="table-light">
                   <th scope="row">1</th>
                   <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>28</td>
+                  <td>Brandon Jacob</td>
+                  <td>Brandon Jacob</td>
                   <td>2016-05-25</td>
                 </tr>
                 <tr class="table-light">
                   <th scope="row">2</th>
                   <td>Bridie Kessler</td>
-                  <td>Developer</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>35</td>
+                  <td>Bridie Kessler</td>
+                  <td>Bridie Kessler</td>
                   <td>2014-12-05</td>
                 </tr>
                 <tr class="table-light">
                   <th scope="row">3</th>
                   <td>Ashleigh Langosh</td>
-                  <td>Finance</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>45</td>
+                  <td>Ashleigh Langosh</td>
+                  <td>Ashleigh Langosh</td>
                   <td>2011-08-12</td>
                 </tr>
                 <tr class="table-light">
                   <th scope="row">4</th>
                   <td>Angus Grady</td>
-                  <td>HR</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>34</td>
+                  <td>Angus Grady</td>
+                  <td>Angus Grady</td>
                   <td>2012-06-11</td>
                 </tr>
                 <tr class="table-light">
                   <th scope="row">5</th>
                   <td>Raheem Lehner</td>
-                  <td>Dynamic Division Officer</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>47</td>
+                  <td>Raheem Lehner</td>
+                  <td>Raheem Lehner</td>
                   <td>2011-04-19</td>
                 </tr>
               </tbody>
             </table>
-            <!-- End Table Kontak -->
+            <!-- End Table Sarana & Prasarana -->
 
           </div>
         </div>

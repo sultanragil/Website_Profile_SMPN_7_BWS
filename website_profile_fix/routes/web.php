@@ -39,6 +39,7 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/data', '\App\Http\Controllers\Backend\DataController');
         Route::resource('/kontak', '\App\Http\Controllers\Backend\KontakController');
         Route::resource('/user', '\App\Http\Controllers\Backend\UserController');
+        Route::resource('/profile', '\App\Http\Controllers\Backend\ProfileController');
 
     });
 });
