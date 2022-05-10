@@ -63,21 +63,22 @@
           <h5 class="card-title">Edit Data Form</h5>
 
           <!-- Vertical Form -->
-          <form method="POST" action="{{ isset($user) ? route('user.update',$user->id) : route('user.store') }}" class="row g-3" >
+          <form method="POST" action="{{route('user.update',$user->id)}}" class="row g-3" >
             @csrf
             @method('PUT')
+            <input type="hidden" name="id" value="{{ isset($user) ? $user->id : '' }}">
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="inputNanme4" name="name" value="{{ isset($user) ? $user->name : '' }}">
+              <input type="text" class="form-control" id="inputNanme4" name="name" value="{{ isset($user) ? $user->name : '' }}" required>
             </div>
             <input type="hidden" name="role" value="admin">
             <div class="col-md-4">
               <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" name="email" value="{{ isset($user) ? $user->email : '' }}">
+              <input type="email" class="form-control" id="inputEmail4" name="email" value="{{ isset($user) ? $user->email : '' }}" required>
             </div>
             <div class="col-md-4">
               <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" name="password" value="{{ isset($user) ? $user->password : '' }}">
+              <input type="password" class="form-control" id="inputPassword4" name="password" value="" required>
             </div>
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>

@@ -45,20 +45,33 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->role = $request->role;
+        $user->image = $request->image;
         $user->save();
 
         return redirect()->route('user.index')->with('success','Data Telah Berhasil Ditambah.');
     }
 
-    public function update(Request $request)
+    public function update($id, Request $request)
     {
-        DB::table('users')->where('id',$request->id)->update([
+        /*DB::table('users')->where('id',$request->id)->update([
             'name' => $request->name,
-            //'user_profile' => $request->creator_profile,
+            'user_profile' => $request->creator_profile,
             'email' => $request->email,
             'password' => $request->password,
             'role' => $request->role,
+        ]);*/
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+
 
         return redirect()->route('user.index')->with('success','Data Telah Berhasil Diperbarui.');
     }

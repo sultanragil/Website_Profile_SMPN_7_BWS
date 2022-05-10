@@ -40,6 +40,7 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/kontak', '\App\Http\Controllers\Backend\KontakController');
         Route::resource('/user', '\App\Http\Controllers\Backend\UserController');
         Route::resource('/profile', '\App\Http\Controllers\Backend\ProfileController');
-
+        Route::resource('/password', '\App\Http\Controllers\Backend\PasswordController');
+        Route::post('profile/update_password', '\App\Http\Controllers\Backend\ProfileController@update_password');
     });
 });

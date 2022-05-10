@@ -70,6 +70,7 @@
               <input type="text" class="form-control" id="inputNanme4" name="name">
             </div>
             <input type="hidden" name="role" value="admin">
+            <input type="hidden" name="image" value="anon100px.png">
             <div class="col-md-4">
               <label for="inputEmail4" class="form-label">Email</label>
               <input type="email" class="form-control" id="inputEmail4" name="email">
