@@ -78,8 +78,9 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        DB::table('users')->where('id',$id)->delete();
-        return redirect()->route('user.index')->with('success','Data Creator Berhasil Dihapus');
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index')->with('success','Data Berhasil Dihapus');
     }
 
 }
