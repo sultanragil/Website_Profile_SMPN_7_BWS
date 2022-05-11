@@ -25,7 +25,7 @@
 @endsection
 
 @section('actkontak')
-  <a class="nav-link collapsed" href="{{ route('kontak.index') }}">
+  <a class="nav-link " href="{{ route('kontak.index') }}">
 @endsection
 
 @section('actmatpel')
@@ -51,7 +51,7 @@
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-      <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('kontak.index') }}">Kontak</a></li>
       <li class="breadcrumb-item active">Create Data</li>
     </ol>
   </nav>
@@ -79,7 +79,7 @@
             </div>
             <div class="col-md-4">
                 <label for="inputEmail4" class="form-label">Logo</label>
-                <input type="text" class="form-control" id="inputEmail4" name="logo">
+                <input type="file" class="form-control" id="inputEmail4" name="logo">
               </div>
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>

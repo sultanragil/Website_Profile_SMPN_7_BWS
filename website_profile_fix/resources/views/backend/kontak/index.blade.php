@@ -73,72 +73,56 @@
                   <th scope="col">Nama Kontak</th>
                   <th scope="col">Link</th>
                   <th scope="col">Logo</th>
+                  <th scope="col">Created At</th>
+                  <th scope="col">Updated At</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach ($kontak as $item)
                 <tr class="table-light">
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">2</th>
-                  <td>Bridie Kessler</td>
-                  <td>Developer</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>35</td>
-                  <td>2014-12-05</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">3</th>
-                  <td>Ashleigh Langosh</td>
-                  <td>Finance</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>45</td>
-                  <td>2011-08-12</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">4</th>
-                  <td>Angus Grady</td>
-                  <td>HR</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>34</td>
-                  <td>2012-06-11</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">5</th>
-                  <td>Raheem Lehner</td>
-                  <td>Dynamic Division Officer</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>47</td>
-                  <td>2011-04-19</td>
-                </tr>
+                  <th scope="row">{{$item->id}}</th>
+                  <td>{{$item->jenis_kontak}}</td>
+                  <td>{{$item->nama_kontak}}</td>
+                  <td>{{$item->link}}</td>
+                  <td>{{$item->logo}}</td>
+                  <td>{{$item->created_at}}</td>
+                  <td>{{$item->updated_at}}</td>
+                  <td>
+                    <div class="row">
+                      <div class="col-3">
+                        <a href="{{ route('kontak.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
+                      </div>
+                      <div class="col-3">
+                        <form action="{{ route('kontak.destroy',$item->id) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus data?')"><i class="bi bi-trash-fill"></i></button>
+                        </form>
+                      </div>
+                    </div>
+                    
+                  </td>
+                </tr> 
+                @endforeach
               </tbody>
             </table>
-            <!-- End Table Kontak -->
-
+  
+            <!-- Centered Pagination -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <div class="col-1">
+                  {!! $kontak->links()!!}
+                </div>
+              </ul>
+            </nav><!-- End Centered Pagination -->
+  
+            <a href="{{ route('kontak.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
+          
           </div>
         </div>
       </div>
     </div>
   </section>
-
-@endsection
+  
+  @endsection
+  
