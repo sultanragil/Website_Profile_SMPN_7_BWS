@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - User > Create New Data </title>
+    <title>Dashboard - Event > Create New Data </title>
 @endsection
 
 @section('actdash')
@@ -21,11 +21,11 @@
 @endsection
 
 @section('actevent')
-  <a class="nav-link collapsed" href="{{ route('event.index') }}">
+  <a class="nav-link" href="{{ route('event.index') }}">
 @endsection
 
 @section('actkontak')
-  <a class="nav-link " href="{{ route('kontak.index') }}">
+  <a class="nav-link collapsed" href="{{ route('kontak.index') }}">
 @endsection
 
 @section('actmatpel')
@@ -51,7 +51,7 @@
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-      <li class="breadcrumb-item"><a href="{{ route('kontak.index') }}">Kontak</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('event.index') }}">Event</a></li>
       <li class="breadcrumb-item active">Create Data</li>
     </ol>
   </nav>
@@ -63,24 +63,20 @@
           <h5 class="card-title">Create New Data Form</h5>
 
           <!-- Vertical Form -->
-          <form method="POST" action="{{ route('kontak.store') }}" class="row g-3" >
-            {!! csrf_field() !!}
-            <div class="col-10">
-              <label for="inputNanme4" class="form-label">Jenis Kontak</label>
-              <input type="text" class="form-control" id="inputNanme4" name="jenis">
+          <form method="POST" action="{{ route('event.store') }}" class="row g-3" enctype="multipart/form-data">
+            @csrf
+            <div class="col-md-4">
+              <label for="inputNanme4" class="form-label">Judul</label>
+              <input type="text" class="form-control" id="inputNanme4" name="judul">
             </div>
             <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Nama Kontak</label>
-              <input type="text" class="form-control" id="inputEmail4" name="nama">
+              <label for="inputEmail4" class="form-label">Cover</label>
+              <input type="file" class="form-control" id="inputEmail4" name="image">
             </div>
-            <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Link</label>
-              <input type="taxt" class="form-control" id="inputPassword4" name="link">
+            <div class="form-group">
+              <textarea name="isi" class="form-control tinymce-editor"></textarea>
             </div>
-            <div class="col-md-4">
-                <label for="inputEmail4" class="form-label">Logo</label>
-                <input type="file" class="form-control" id="inputEmail4" name="logo">
-              </div>
+            <input type="hidden" name="id_user" value="{{Auth::user()->id}}">
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>
               <button type="reset" class="btn btn-secondary btn-sm">Reset</button>

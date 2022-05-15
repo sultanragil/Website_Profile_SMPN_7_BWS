@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('cover');
+            $table->text('isi');
+            $table->string('id_user');
             $table->timestamps();
         });
     }

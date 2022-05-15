@@ -14,7 +14,7 @@ class ProfileController extends Controller
     //
     public function __construct()
     {
-        /*$this->middleware('auth'); /*Hak Akses Login*/
+        $this->middleware('auth'); /*Hak Akses Login*/
         /*$this->middleware('admin'); /*Hak Akses Super Admin*/
     }
     public function index()
@@ -27,7 +27,7 @@ class ProfileController extends Controller
         if($request->hasFile('image')){
             $file           = $request->file('image');
             $nama_file      = $file->getClientOriginalName();
-            $file->move('frontend/assets/img/',$file->getClientOriginalName());
+            $file->move('backend/assets/img/',$file->getClientOriginalName());
             $user->image = $nama_file;
         }
         $user->name = $request->name;
