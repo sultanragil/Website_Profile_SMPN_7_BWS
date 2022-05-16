@@ -34,7 +34,7 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/pegawai', '\App\Http\Controllers\Backend\PegawaiController');
         Route::resource('/berita', '\App\Http\Controllers\Backend\BeritaController');
         Route::resource('/sarana', '\App\Http\Controllers\Backend\SaranaController');
-        Route::resource('/matpel', '\App\Http\Controllers\Backend\MatpelController');
+        Route::resource('/jabatan', '\App\Http\Controllers\Backend\MatpelController');
         Route::resource('/event', '\App\Http\Controllers\Backend\EventController');
         Route::resource('/data', '\App\Http\Controllers\Backend\DataController');
         Route::resource('/kontak', '\App\Http\Controllers\Backend\KontakController');

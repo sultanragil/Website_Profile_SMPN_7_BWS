@@ -29,7 +29,7 @@
 @endsection
 
 @section('actmatpel')
-    <a class="nav-link collapsed" href="{{ route('matpel.index') }}">
+    <a class="nav-link collapsed" href="{{ route('jabatan.index') }}">
 @endsection
 
 @section('actpegawai')
@@ -97,9 +97,9 @@
                       </form>
                     </div>
                   </div>
-                  
+
                 </td>
-              </tr> 
+              </tr>
               @endforeach
             </tbody>
           </table>
@@ -114,7 +114,7 @@
           </nav><!-- End Centered Pagination -->
 
           <a href="{{ route('user.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
-        
+
         </div>
       </div>
     </div>

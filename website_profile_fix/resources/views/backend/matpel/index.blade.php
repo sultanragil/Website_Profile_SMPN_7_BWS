@@ -29,7 +29,7 @@
 @endsection
 
 @section('actmatpel')
-    <a class="nav-link " href="{{ route('matpel.index') }}">
+    <a class="nav-link" href="{{ route('jabatan.index') }}">
 @endsection
 
 @section('actpegawai')
@@ -47,11 +47,11 @@
 @section('content')
 
 <div class="pagetitle">
-    <h1>Data Mata Pelajaran</h1>
+    <h1>Data Jabatan</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item active">Mata Pelajaran</li>
+        <li class="breadcrumb-item active">Jabatan</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -62,7 +62,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Data Mata Pelajaran</h5>
+            <h5 class="card-title">Data Jabatan</h5>
 
           <!-- Table Data User -->
           <table class="table table-hover">
@@ -83,10 +83,10 @@
                 <td>
                   <div class="row">
                     <div class="col-3">
-                      <a href="{{ route('matpel.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
+                      <a href="{{ route('jabatan.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
                     </div>
                     <div class="col-3">
-                      <form action="{{ route('matpel.destroy',$item->id) }}" method="POST">
+                      <form action="{{ route('jabatan.destroy',$item->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus data?')"><i class="bi bi-trash-fill"></i></button>
@@ -109,7 +109,7 @@
             </ul>
           </nav><!-- End Centered Pagination -->
 
-          <a href="{{ route('matpel.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
+          <a href="{{ route('jabatan.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
           </div>
         </div>
       </div>

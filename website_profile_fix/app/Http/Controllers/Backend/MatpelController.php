@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Jabatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,7 @@ class MatpelController extends Controller
     }
     public function index()
     {
-        $courses = DB::table('courses')->paginate(5);
+        $courses = DB::table('jobs')->paginate(5);
         return view('backend.matpel.index', compact('courses'));
     }
     public function create()
@@ -28,7 +29,7 @@ class MatpelController extends Controller
     }
     public function edit($id)
     {
-        $courses = DB::table('courses')->where('id',$id)->first();
+        $courses = DB::table('jobs')->where('id',$id)->first();
         return view('backend.matpel.edit',compact('courses'));
     }
     public function store(Request $request)
@@ -36,27 +37,27 @@ class MatpelController extends Controller
         $request->validate([
             'name' => 'required',
         ]);
-        $user = new Matpel;
+        $user = new Jabatan();
         $user->name = $request->name;
         $user->save();
 
-        return redirect()->route('matpel.index')->with('success','Data Telah Berhasil Ditambah.');
+        return redirect()->route('jabatan.index')->with('success','Data Telah Berhasil Ditambah.');
     }
     public function update($id, Request $request){
 
         $request->validate([
             'name' => 'required',
         ]);
-        $user = Matpel::find($id);
+        $user = Jabatan::find($id);
         $user->name = $request->name;
         $user->save();
 
-        return redirect()->route('matpel.index')->with('success','Data Telah Berhasil Diperbarui.');
+        return redirect()->route('jabatan.index')->with('success','Data Telah Berhasil Diperbarui.');
     }
     public function destroy($id)
     {
-        $courses = Matpel::find($id);
+        $courses = Jabatan::find($id);
         $courses->delete();
-        return redirect()->route('matpel.index')->with('success','Data Berhasil Dihapus');
+        return redirect()->route('jabatan.index')->with('success','Data Berhasil Dihapus');
     }
 }

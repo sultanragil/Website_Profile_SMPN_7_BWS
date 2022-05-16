@@ -29,7 +29,7 @@
 @endsection
 
 @section('actmatpel')
- <a class="nav-link " href="{{ route('matpel.index') }}">
+    <a class="nav-link" href="{{ route('jabatan.index') }}">
 @endsection
 
 @section('actpegawai')
@@ -51,7 +51,7 @@
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('matpel.index') }}">Matpel</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Jabatan</a></li>
         <li class="breadcrumb-item active">Edit Data</li>
       </ol>
     </nav>
@@ -63,12 +63,12 @@
           <h5 class="card-title">Edit Data Form</h5>
 
           <!-- Vertical Form -->
-          <form method="POST" action="{{route('matpel.update',$courses->id)}}" class="row g-3" >
+          <form method="POST" action="{{route('jabatan.update',$courses->id)}}" class="row g-3" >
             @csrf
             @method('PUT')
             <input type="hidden" name="id" value="{{ isset($courses) ? $courses->id : '' }}">
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Your Name</label>
+              <label for="inputNanme4" class="form-label">Bidang</label>
               <input type="text" class="form-control" id="inputNanme4" name="name" value="{{ isset($courses) ? $courses->name : '' }}" required>
             </div>
             <div class="left-text">

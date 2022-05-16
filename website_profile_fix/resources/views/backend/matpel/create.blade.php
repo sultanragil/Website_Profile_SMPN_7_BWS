@@ -29,7 +29,7 @@
 @endsection
 
 @section('actmatpel')
-  <a class="nav-link" href="{{ route('matpel.index') }}">
+    <a class="nav-link" href="{{ route('jabatan.index') }}">
 @endsection
 
 @section('actpegawai')
@@ -51,7 +51,7 @@
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-      <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Matpel</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Jabatan</a></li>
       <li class="breadcrumb-item active">Create Data</li>
     </ol>
   </nav>
@@ -63,10 +63,10 @@
           <h5 class="card-title">Create New Data Form</h5>
 
           <!-- Vertical Form -->
-          <form method="POST" action="{{ route('matpel.store') }}" class="row g-3" >
+          <form method="POST" action="{{ route('jabatan.store') }}" class="row g-3" >
             {!! csrf_field() !!}
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Nama Matkul</label>
+              <label for="inputNanme4" class="form-label">Bidang</label>
               <input type="text" class="form-control" name="name">
             </div>
             <div class="left-text">

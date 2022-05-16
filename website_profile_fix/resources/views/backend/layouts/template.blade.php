@@ -332,8 +332,8 @@
 
       <li class="nav-item">
         @yield('actmatpel')
-          <i class="bi bi-book-fill"></i>
-          <span>Mata Pelajaran</span>
+          <i class="bi bi-people-fill"></i>
+          <span>Jabatan</span>
         </a>
       </li><!-- End Mata Pelajaran Page Nav -->
 

@@ -29,7 +29,7 @@
 @endsection
 
 @section('actmatpel')
-  <a class="nav-link collapsed" href="{{ route('matpel.index') }}">
+    <a class="nav-link collapsed" href="{{ route('jabatan.index') }}">
 @endsection
 
 @section('actpegawai')

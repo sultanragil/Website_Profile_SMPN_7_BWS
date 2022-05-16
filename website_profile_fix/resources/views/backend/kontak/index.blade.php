@@ -5,47 +5,47 @@
 @endsection
 
 @section('actdash')
-    <a class="nav-link collapsed" href="{{ route('index') }}">  
+    <a class="nav-link collapsed" href="{{ route('index') }}">
 @endsection
 
 @section('actberita')
-    <a class="nav-link collapsed" href="{{ route('berita.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('berita.index') }}">
 @endsection
 
 @section('actcar')
-    <a class="nav-link collapsed" href="{{ route('carousel.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('carousel.index') }}">
 @endsection
 
 @section('actdata')
-    <a class="nav-link collapsed" href="{{ route('data.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('data.index') }}">
 @endsection
 
 @section('actevent')
-    <a class="nav-link collapsed" href="{{ route('event.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('event.index') }}">
 @endsection
 
 @section('actkontak')
-    <a class="nav-link " href="{{ route('kontak.index') }}">  
+    <a class="nav-link " href="{{ route('kontak.index') }}">
 @endsection
 
 @section('actmatpel')
-    <a class="nav-link collapsed" href="{{ route('matpel.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('jabatan.index') }}">
 @endsection
 
 @section('actpegawai')
-    <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">
 @endsection
 
 @section('actsarana')
-    <a class="nav-link collapsed" href="{{ route('sarana.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('sarana.index') }}">
 @endsection
 
 @section('actuser')
-    <a class="nav-link collapsed" href="{{ route('user.index') }}">  
+    <a class="nav-link collapsed" href="{{ route('user.index') }}">
 @endsection
 
 @section('content')
-    
+
 <div class="pagetitle">
     <h1>Data Kontak</h1>
     <nav>
@@ -100,13 +100,13 @@
                         </form>
                       </div>
                     </div>
-                    
+
                   </td>
-                </tr> 
+                </tr>
                 @endforeach
               </tbody>
             </table>
-  
+
             <!-- Centered Pagination -->
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
@@ -115,14 +115,13 @@
                 </div>
               </ul>
             </nav><!-- End Centered Pagination -->
-  
+
             <a href="{{ route('kontak.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
-          
+
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   @endsection
-  
