@@ -44,6 +44,10 @@
     <a class="nav-link collapsed" href="{{ route('user.index') }}">
 @endsection
 
+@section('actprofil')
+    <a class="nav-link collapsed" href="{{ route('profile.index') }}">
+@endsection
+
 @section('content')
 
     <div class="pagetitle">

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->text('sejarah')->nullable();
+            $table->text('vm')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('kepsek_img')->nullable();
+            $table->string('kepsek_nama')->nullable();
             $table->timestamps();
         });
     }

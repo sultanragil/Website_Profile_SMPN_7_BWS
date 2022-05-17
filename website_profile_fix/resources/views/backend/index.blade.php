@@ -40,9 +40,12 @@
     <a class="nav-link collapsed" href="{{ route('sarana.index') }}">
 @endsection
 
-
 @section('actuser')
     <a class="nav-link collapsed" href="{{ route('user.index') }}">
+@endsection
+
+@section('actprofil')
+    <a class="nav-link collapsed" href="{{ route('cms.index') }}">
 @endsection
 
 
