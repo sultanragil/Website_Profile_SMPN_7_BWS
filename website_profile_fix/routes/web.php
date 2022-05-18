@@ -45,3 +45,9 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::post('profile/update_password', '\App\Http\Controllers\Backend\ProfileController@update_password');
     });
 });
+
+Route::group(['namespace'=>'Frontend'], function () {
+    Route::prefix('home')->group(function () {
+        Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
+    });
+});
