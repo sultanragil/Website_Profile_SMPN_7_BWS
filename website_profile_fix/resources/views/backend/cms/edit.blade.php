@@ -8,10 +8,6 @@
     <a class="nav-link collapsed" href="{{ route('index') }}">
 @endsection
 
-@section('actberita')
-    <a class="nav-link collapsed" href="{{ route('berita.index') }}">
-@endsection
-
 @section('actcar')
     <a class="nav-link collapsed" href="{{ route('carousel.index') }}">
 @endsection
@@ -56,7 +52,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('cms.index') }}">CMS Profile</a></li>
-        <li class="breadcrumb-item active">Edit Profile Sejarah</li>
+        <li class="breadcrumb-item active">Edit CMS Profil Sekolah</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->

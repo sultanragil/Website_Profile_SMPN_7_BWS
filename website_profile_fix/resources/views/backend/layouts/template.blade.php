@@ -155,13 +155,6 @@
       </li><!-- End Sarana & Prasarana Page Nav -->
 
       <li class="nav-item">
-        @yield('actberita')
-          <i class="bi bi-calendar-check-fill"></i>
-          <span>Berita & Prestasi</span>
-        </a>
-      </li><!-- End Berita & Prestasi Page Nav -->
-
-      <li class="nav-item">
         @yield('actmatpel')
           <i class="bi bi-people-fill"></i>
           <span>Jabatan</span>

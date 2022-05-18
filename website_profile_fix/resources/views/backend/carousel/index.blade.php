@@ -8,10 +8,6 @@
     <a class="nav-link collapsed" href="{{ route('index') }}">
 @endsection
 
-@section('actberita')
-    <a class="nav-link collapsed" href="{{ route('berita.index') }}">
-@endsection
-
 @section('actcar')
     <a class="nav-link " href="{{ route('carousel.index') }}">
 @endsection
@@ -80,41 +76,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="table-light">
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">2</th>
-                  <td>Bridie Kessler</td>
-                  <td>Developer</td>
-                  <td>35</td>
-                  <td>2014-12-05</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">3</th>
-                  <td>Ashleigh Langosh</td>
-                  <td>Finance</td>
-                  <td>45</td>
-                  <td>2011-08-12</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">4</th>
-                  <td>Angus Grady</td>
-                  <td>HR</td>
-                  <td>34</td>
-                  <td>2012-06-11</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">5</th>
-                  <td>Raheem Lehner</td>
-                  <td>Dynamic Division Officer</td>
-                  <td>47</td>
-                  <td>2011-04-19</td>
-                </tr>
+                @foreach ($carousel as $item)
+                    <tr class="table-light">
+                      <th scope="row">{{$item->id}}</th>
+                      <td>{{$item->judul}}</td>
+                      <td><img src="{{ URL::to('backend/assets/img/', $item->image) }}" class="img-thumbnail"></td>
+                      <td>{!! html_entity_decode($item->desc) !!}</td>
+                      <td>
+                        <a href="{{ route('carousel.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
+                      </td>
+                    </tr>
+                @endforeach 
               </tbody>
             </table>
             <!-- End Table Carousel -->

@@ -8,10 +8,6 @@
   <a class="nav-link collapsed" href="{{ route('index') }}">
 @endsection
 
-@section('actberita')
-  <a class="nav-link collapsed" href="{{ route('berita.index') }}">
-@endsection
-
 @section('actcar')
   <a class="nav-link collapsed" href="{{ route('carousel.index') }}">
 @endsection
@@ -42,6 +38,10 @@
 
 @section('actuser')
   <a class="nav-link " href="{{ route('user.index') }}">
+@endsection
+
+@section('actprofil')
+    <a class="nav-link collapsed" href="{{ route('cms.index') }}">
 @endsection
 
 @section('dashboard')

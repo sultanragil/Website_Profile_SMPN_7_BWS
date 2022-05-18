@@ -32,7 +32,7 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/', '\App\Http\Controllers\Backend\IndexController');
         Route::resource('/carousel', '\App\Http\Controllers\Backend\CarouselController');
         Route::resource('/pegawai', '\App\Http\Controllers\Backend\PegawaiController');
-        Route::resource('/berita', '\App\Http\Controllers\Backend\BeritaController');
+        //Route::resource('/berita', '\App\Http\Controllers\Backend\BeritaController');
         Route::resource('/sarana', '\App\Http\Controllers\Backend\SaranaController');
         Route::resource('/jabatan', '\App\Http\Controllers\Backend\MatpelController');
         Route::resource('/event', '\App\Http\Controllers\Backend\EventController');

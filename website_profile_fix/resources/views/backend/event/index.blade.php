@@ -8,10 +8,6 @@
     <a class="nav-link collapsed" href="{{ route('index') }}">
 @endsection
 
-@section('actberita')
-    <a class="nav-link collapsed" href="{{ route('berita.index') }}">
-@endsection
-
 @section('actcar')
     <a class="nav-link collapsed" href="{{ route('carousel.index') }}">
 @endsection
