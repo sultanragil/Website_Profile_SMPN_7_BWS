@@ -16,10 +16,17 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->text('sejarah')->nullable();
-            $table->text('vm')->nullable();
+            $table->string('sekolah_img')->nullable();
+            $table->text('visi')->nullable();
+            $table->text('misi')->nullable();
             $table->string('logo')->nullable();
+            $table->text('arti_logo')->nullable();
             $table->string('kepsek_img')->nullable();
             $table->string('kepsek_nama')->nullable();
+            $table->string('wakepsek1_img')->nullable();
+            $table->string('wakepsek1_nama')->nullable();
+            $table->string('wakepsek2_img')->nullable();
+            $table->string('wakepsek2_nama')->nullable();
             $table->timestamps();
         });
     }

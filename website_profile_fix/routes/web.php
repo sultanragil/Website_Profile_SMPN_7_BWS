@@ -49,8 +49,9 @@ Route::group(['namespace'=>'Backend'], function () {
     });
 });
 
-//Route::group(['namespace'=>'Frontend'], function () {
-    //Route::prefix('home')->group(function () {
-        //Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
-    //});
-//});
+Route::group(['namespace'=>'Frontend'], function () {
+    Route::prefix('home')->group(function () {
+        Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
+        Route::resource('/profile', '\App\Http\Controllers\Frontend\ProfileController');
+    });
+});

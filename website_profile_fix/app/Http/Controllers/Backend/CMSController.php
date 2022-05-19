@@ -32,17 +32,33 @@ class CMSController extends Controller
     public function store(Request $request)
     {
         $profile = new Profile;
-        $file           = $request->file('logo');
+        $file           = $request->file('sekolah_img');
         $nama_file      = $file->getClientOriginalName();
         $file->move('backend/assets/img/',$file->getClientOriginalName());
-        $file1           = $request->file('kepsek_img');
+        $profile->sekolah_img = $nama_file;
+        $profile->sejarah = $request->sejarah;
+        $file1           = $request->file('logo');
         $nama_file1      = $file1->getClientOriginalName();
         $file1->move('backend/assets/img/',$file1->getClientOriginalName());
-        $profile->sejarah = $request->sejarah;
-        $profile->vm = $request->vm;
+        $profile->logo = $nama_file1;
+        $profile->arti_logo = $request->arti_logo;
+        $profile->visi = $request->visi;
+        $profile->misi = $request->misi;
+        $file2           = $request->file('kepsek_img');
+        $nama_file2      = $file2->getClientOriginalName();
+        $file2->move('backend/assets/img/',$file2->getClientOriginalName());
+        $profile->kepsek_img = $nama_file2;
         $profile->kepsek_nama = $request->kepsek_nama;
-        $profile->logo = $nama_file;
-        $profile->kepsek_img = $nama_file1;
+        $file3           = $request->file('wakepsek1_img');
+        $nama_file3      = $file3->getClientOriginalName();
+        $file3->move('backend/assets/img/',$file3->getClientOriginalName());
+        $profile->wakepsek1_img = $nama_file3;
+        $profile->wakepsek1_nama = $request->wakepsek1_nama;
+        $file4           = $request->file('wakepsek2_img');
+        $nama_file4      = $file4->getClientOriginalName();
+        $file4->move('backend/assets/img/',$file4->getClientOriginalName());
+        $profile->wakepsek2_img = $nama_file4;
+        $profile->wakepsek2_nama = $request->wakepsek2_nama;
         $profile->save();
 
         return redirect()->route('cms.index')->with('success','Data Telah Berhasil Ditambah.');
@@ -52,23 +68,43 @@ class CMSController extends Controller
     {
         $profile = Profile::find($id);
     
-        if($request->hasFile('logo')){
-            $file           = $request->file('logo');
+        if($request->hasFile('sekolah_img')){
+            $file           = $request->file('sekolah_img');
             $nama_file      = $file->getClientOriginalName();
             $file->move('backend/assets/img/',$file->getClientOriginalName());
-            $profile->logo = $nama_file;
-            
+            $profile->sekolah_img = $nama_file;  
+        }
+        if($request->hasFile('logo')){
+            $file1           = $request->file('logo');
+            $nama_file1      = $file1->getClientOriginalName();
+            $file1->move('backend/assets/img/',$file1->getClientOriginalName());
+            $profile->logo = $nama_file1;   
         }
         if($request->hasFile('kepsek_img')){
-            $file1           = $request->file('kepsek_img');
-            $nama_file1     = $file1->getClientOriginalName();
-            $file1->move('backend/assets/img/',$file1->getClientOriginalName());
-            $profile->kepsek_img = $nama_file1;
+            $file2           = $request->file('kepsek_img');
+            $nama_file2      = $file2->getClientOriginalName();
+            $file2->move('backend/assets/img/',$file2->getClientOriginalName());
+            $profile->kepsek_img = $nama_file2;       
+        }
+        if($request->hasFile('wakepsek1_img')){
+            $file3           = $request->file('wakepsek1_img');
+            $nama_file3     = $file3->getClientOriginalName();
+            $file3->move('backend/assets/img/',$file3->getClientOriginalName());
+            $profile->wakepsek1_img = $nama_file3;
+        }
+        if($request->hasFile('wakepsek2_img')){
+            $file4           = $request->file('wakepsek2_img');
+            $nama_file4     = $file4->getClientOriginalName();
+            $file4->move('backend/assets/img/',$file4->getClientOriginalName());
+            $profile->wakepsek2_img = $nama_file4;
         }
         
         $profile->sejarah = $request->sejarah;
-        $profile->vm = $request->vm;
+        $profile->visi = $request->visi;
+        $profile->misi = $request->misi;
         $profile->kepsek_nama = $request->kepsek_nama;
+        $profile->wakepsek1_nama = $request->wakepsek1_nama;
+        $profile->wakepsek2_nama = $request->wakepsek2_nama;
         $profile->save();
 
         return redirect()->route('cms.index')->with('success','Data Telah Berhasil Diperbarui.');

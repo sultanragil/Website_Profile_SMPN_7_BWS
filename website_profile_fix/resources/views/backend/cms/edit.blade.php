@@ -69,10 +69,14 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-lg-6">
-                  <label for="inputEmail4" class="form-label">Visi Misi</label>
-                  <textarea name="vm" class="form-control tinymce-editor">{{ isset($profile) ? $profile->vm : '' }}</textarea>
+                  <label for="inputEmail4" class="form-label">Visi</label>
+                  <textarea name="visi" class="form-control tinymce-editor">{{ isset($profile) ? $profile->visi : '' }}</textarea>
+                  <label for="inputEmail4" class="form-label">Misi</label>
+                  <textarea name="misi" class="form-control tinymce-editor">{{ isset($profile) ? $profile->misi : '' }}</textarea>
                   <label for="inputEmail4" class="form-label">Sejarah</label>
                   <textarea name="sejarah" class="form-control tinymce-editor">{{ isset($profile) ? $profile->sejarah : '' }}</textarea>
+                  <label for="inputEmail4" class="form-label">Arti Logo</label>
+                  <textarea name="arti_logo" class="form-control tinymce-editor">{{ isset($profile) ? $profile->arti_logo : '' }}</textarea>
                 </div>
                 <div class="col-lg-6">
                   <label for="inputEmail4" class="form-label">Nama Kepala Sekolah</label>
@@ -81,9 +85,25 @@
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile" name="kepsek_img">
                   </div>
+                  <label for="inputEmail4" class="form-label">Nama Wakil Kepala Sekolah Kesiswaan</label>
+                  <input type="text" class="form-control" id="inputNanme4" name="wakepsek1_nama" value="{{ isset($profile) ? $profile->wakepsek1_nama : '' }}">
+                  <label for="inputEmail4" class="form-label">Foto Wakil Kepala Sekolah kesiswaan</label>
+                  <div class="col-10">
+                    <input type="file" class="form-control" id="inputFile" name="wakepsek1_img">
+                  </div>
+                  <label for="inputEmail4" class="form-label">Nama Wakil Kepala Sekolah Kurikulum</label>
+                  <input type="text" class="form-control" id="inputNanme4" name="wakepsek2_nama" value="{{ isset($profile) ? $profile->wakepsek2_nama : '' }}">
+                  <label for="inputEmail4" class="form-label">Foto Wakil Kepala Sekolah</label>
+                  <div class="col-10">
+                    <input type="file" class="form-control" id="inputFile" name="wakepsek2_img">
+                  </div>
                   <label for="inputEmail4" class="form-label">Image Logo Sekolah</label>
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile1" name="logo">
+                  </div>
+                  <label for="inputEmail4" class="form-label">Image Sekolah</label>
+                  <div class="col-10">
+                    <input type="file" class="form-control" id="inputFile1" name="sekolah_img">
                   </div>
                 </div>
               </div>

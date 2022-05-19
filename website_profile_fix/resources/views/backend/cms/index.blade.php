@@ -61,7 +61,16 @@
 
         @foreach ($profile as $item)
 
-        <div class="col-lg-9">
+        <div class="col-lg-6">
+
+            <!-- Headmaster Card -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Foto Sekolah</h5>
+              </div>
+              <img src="{{ URL::to('backend/assets/img/', $item->sekolah_img) }}" class="card-img-bottom" alt="...">
+          </div><!-- End Headmaster Card -->
+
             <!-- Sejarah Card -->
             <div class="card">
                 <div class="card-body">
@@ -73,23 +82,24 @@
             <!-- Visi Misi Card -->
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Visi & Misi</h5>
-                  {!! html_entity_decode($item->vm) !!}
+                  <h5 class="card-title">Visi</h5>
+                  {!! html_entity_decode($item->visi) !!}
                 </div>
             </div><!-- End Visi mIsi Card -->
+
+            <!-- Visi Misi Card -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Misi</h5>
+                {!! html_entity_decode($item->misi) !!}
+              </div>
+          </div><!-- End Visi mIsi Card -->
 
             <a href="{{ route('cms.edit',$item->id) }}"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Edit</button></a>
 
         </div>
     
-          <div class="col-lg-3">
-            <!-- Logo Card -->
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Logo</h5>
-                </div>
-                <img src="{{ URL::to('backend/assets/img/', $item->logo) }}" class="card-img-bottom" alt="...">
-            </div><!-- End Logo Card -->
+        <div class="col-lg-3">
     
             <!-- Headmaster Card -->
             <div class="card">
@@ -101,7 +111,43 @@
                     <p class="card-text text-center">{{$item->kepsek_nama}}</p>
                 </div>
             </div><!-- End Headmaster Card -->
-          </div>
+
+            <!-- Vice-Headmaster Kesiswaan Card -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Wakil Kepala Sekolah Kesiswaan</h5>
+              </div>
+              <img src="{{ URL::to('backend/assets/img/', $item->wakepsek1_img) }}" class="card-img-bottom" alt="...">
+              <div class="card-body">
+                  <p class="card-text text-center">{{$item->wakepsek1_nama}}</p>
+              </div>
+            </div><!-- End Vice-Headmaster Kesiswaan Card -->
+
+          <!-- Vice-Headmaster Kurikulum Card -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Wakil Kepala Sekolah Kurikulum</h5>
+            </div>
+            <img src="{{ URL::to('backend/assets/img/', $item->wakepsek2_img) }}" class="card-img-bottom" alt="...">
+            <div class="card-body">
+                <p class="card-text text-center">{{$item->wakepsek2_nama}}</p>
+            </div>
+          </div><!-- End Vice-Headmaster Kurikulum Card -->
+
+        </div>
+
+        <div class="col-lg-3">
+
+          <!-- Logo Card -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Logo</h5>
+            </div>
+            <img src="{{ URL::to('backend/assets/img/', $item->logo) }}" class="card-img-bottom" alt="...">
+          </div><!-- End Logo Card -->
+
+        </div>
+          
         @endforeach
       
 
