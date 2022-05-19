@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('jenis_kontak');
             $table->string('nama_kontak');
             $table->string('link');
-            $table->string('logo')->null;
+            $table->string('logo');
             $table->timestamps();
         });
     }

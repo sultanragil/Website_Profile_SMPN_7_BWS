@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Kontak > Edit Data </title>
+    <title>Dashboard - Sarana & Prasarana > Edit Data </title>
 @endsection
 
 @section('actdash')
@@ -24,10 +24,6 @@
  <a class="nav-link collapsed" href="{{ route('kontak.index') }}">
 @endsection
 
-@section('actmatpel')
-    <a class="nav-link collapsed" href="{{ route('jabatan.index') }}">
-@endsection
-
 @section('actpegawai')
  <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">
 @endsection
@@ -40,10 +36,6 @@
  <a class="nav-link collapsed" href="{{ route('user.index') }}">
 @endsection
 
-@section('actprofil')
-    <a class="nav-link collapsed" href="{{ route('cms.index') }}">
-@endsection
-
 @section('dashboard')
 
   <div class="pagetitle">
@@ -51,7 +43,7 @@
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('kontak.index') }}">Kontak</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('sarana.index') }}">Sarana & Prasarana</a></li>
         <li class="breadcrumb-item active">Edit Data</li>
       </ol>
     </nav>
@@ -63,25 +55,20 @@
           <h5 class="card-title">Edit Data Form</h5>
 
           <!-- Vertical Form -->
-          <form method="POST" action="{{ isset($kontak) ? route('kontak.update',$kontak->id) : route('kontak.store') }}" class="row g-3" enctype="multipart/form-data" >
+          <form method="POST" action="{{ isset($sarana) ? route('sarana.update',$sarana->id) : route('sarana.store') }}" class="row g-3" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Jenis Kontak</label>
-              <input type="text" class="form-control" id="inputNanme4" name="jenis" value="{{ isset($kontak) ? $kontak->jenis_kontak : '' }}">
+              <label for="inputNanme4" class="form-label">Nama Sarana</label>
+              <input type="text" class="form-control" id="inputNanme4" name="nama" value="{{ isset($sarana) ? $sarana->nama : '' }}">
             </div>
             <input type="hidden" name="role" value="admin">
-            <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Nama Kontak</label>
-              <input type="text" class="form-control" id="inputEmail4" name="nama" value="{{ isset($kontak) ? $kontak->nama_kontak : '' }}">
+            <div class="form-group">
+              <textarea name="desc" class="form-control tinymce-editor">{{ isset($sarana) ? $sarana->desc : '' }}</textarea>
             </div>
             <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Link</label>
-              <input type="text" class="form-control" id="inputPassword4" name="link" value="{{ isset($kontak) ? $kontak->link : '' }}">
-            </div>
-            <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Logo</label>
-              <input type="file" class="form-control" id="inputPassword4" name="logo">
+              <label for="inputPassword4" class="form-label">Image</label>
+              <input type="file" class="form-control" id="inputPassword4" name="image" value="{{ isset($sarana) ? $sarana->image : '' }}">
             </div>
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>

@@ -84,7 +84,7 @@
                   <td>{{$item->jenis_kontak}}</td>
                   <td>{{$item->nama_kontak}}</td>
                   <td>{{$item->link}}</td>
-                  <td>{{$item->logo}}</td>
+                  <td class="col-3"><img src="{{ URL::to('backend/assets/img/', $item->logo) }}" class="img-thumbnail"></td>
                   <td>{{$item->created_at}}</td>
                   <td>{{$item->updated_at}}</td>
                   <td>

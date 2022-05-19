@@ -11,7 +11,7 @@ class KontakController extends Controller
 {
     public function __construct()
     {
-        /*$this->middleware('auth'); /*Hak Akses Login*/
+        $this->middleware('auth'); /*Hak Akses Login*/
         /*$this->middleware('admin'); /*Hak Akses Super Admin*/
     }
     public function index()
@@ -37,43 +37,31 @@ class KontakController extends Controller
     }
     public function update($id, Request $request)
     {
-        /*DB::table('users')->where('id',$request->id)->update([
-            'name' => $request->name,
-            'user_profile' => $request->creator_profile,
-            'email' => $request->email,
-            'password' => $request->password,
-            'role' => $request->role,
-        ]);*/
-        $request->validate([
-            'jenis' => 'required',
-            'nama' => 'required',
-            'link' => 'required',
-            'logo' => 'required',
-        ]);
         $kontak = Kontak::find($id);
+        if($request->hasFile('logo')){
+            $logo           = $request->file('logo');
+            $nama_file      = $logo->getClientOriginalName();
+            $logo->move('backend/assets/img/',$logo->getClientOriginalName());
+            $kontak->logo = $nama_file;
+        }
         $kontak->jenis_kontak = $request->jenis;
         $kontak->nama_kontak = $request->nama;
         $kontak->link = $request->link;
-        $kontak->logo = $request->logo;
         $kontak->save();
-
-
 
         return redirect()->route('kontak.index')->with('success','Data Telah Berhasil Diperbarui.');
     }
     
     public function store(Request $request)
     {
-        $request->validate([
-            'jenis' => 'required',
-            'nama' => 'required',
-            'link' => 'required',
-        ]);
         $kontak = new Kontak;
+        $logo           = $request->file('logo');
+        $nama_file      = $logo->getClientOriginalName();
+        $logo->move('backend/assets/img/',$logo->getClientOriginalName());
         $kontak->jenis_kontak = $request->jenis;
         $kontak->nama_kontak = $request->nama;
         $kontak->link = $request->link;
-        $kontak->logo = $request->logo;
+        $kontak->logo = $nama_file;
         $kontak->save();
 
         return redirect()->route('kontak.index')->with('success','Data Telah Berhasil Ditambah.');

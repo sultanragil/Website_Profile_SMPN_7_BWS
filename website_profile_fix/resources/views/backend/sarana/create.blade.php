@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Kontak > Create New Data </title>
+    <title>Dashboard - Sarana > Create New Data </title>
 @endsection
 
 @section('actdash')
@@ -24,24 +24,16 @@
   <a class="nav-link " href="{{ route('kontak.index') }}">
 @endsection
 
-@section('actmatpel')
-    <a class="nav-link collapsed" href="{{ route('jabatan.index') }}">
-@endsection
-
 @section('actpegawai')
   <a class="nav-link collapsed" href="{{ route('pegawai.index') }}">
 @endsection
 
 @section('actsarana')
-  <a class="nav-link collapsed" href="{{ route('sarana.index') }}">
+  <a class="nav-link " href="{{ route('sarana.index') }}">
 @endsection
 
 @section('actuser')
   <a class="nav-link collapsed" href="{{ route('user.index') }}">
-@endsection
-
-@section('actprofil')
-    <a class="nav-link collapsed" href="{{ route('cms.index') }}">
 @endsection
 
 @section('dashboard')
@@ -51,7 +43,7 @@
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-      <li class="breadcrumb-item"><a href="{{ route('kontak.index') }}">Kontak</a></li>
+      <li class="breadcrumb-item"><a href="{{ route('sarana.index') }}">Sarana & Prasarana</a></li>
       <li class="breadcrumb-item active">Create Data</li>
     </ol>
   </nav>
@@ -63,23 +55,18 @@
           <h5 class="card-title">Create New Data Form</h5>
 
           <!-- Vertical Form -->
-          <form method="POST" action="{{ route('kontak.store') }}" class="row g-3" enctype="multipart/form-data" >
+          <form method="POST" action="{{ route('sarana.store') }}" class="row g-3" enctype="multipart/form-data" >
             @csrf
-            <div class="col-10">
-              <label for="inputNanme4" class="form-label">Jenis Kontak</label>
-              <input type="text" class="form-control" id="inputNanme4" name="jenis">
-            </div>
             <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Nama Kontak</label>
+              <label for="inputEmail4" class="form-label">Nama Sarana</label>
               <input type="text" class="form-control" id="inputEmail4" name="nama">
             </div>
             <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Link</label>
-              <input type="taxt" class="form-control" id="inputPassword4" name="link">
-            </div>
-            <div class="col-md-4">
-                <label for="inputEmail4" class="form-label">Logo</label>
-                <input type="file" class="form-control" id="inputEmail4" name="logo">
+                <label for="inputEmail4" class="form-label">Image</label>
+                <input type="file" class="form-control" id="inputEmail4" name="image">
+              </div>
+              <div class="form-group">
+                <textarea name="desc" class="form-control tinymce-editor"></textarea>
               </div>
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>
