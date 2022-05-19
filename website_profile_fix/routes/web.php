@@ -42,12 +42,15 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/profile', '\App\Http\Controllers\Backend\ProfileController');
         Route::resource('/password', '\App\Http\Controllers\Backend\PasswordController');
         Route::resource('/cms', '\App\Http\Controllers\Backend\CMSController');
+        Route::resource('/import_data', '\App\Http\Controllers\Backend\ImportExcelController');
         Route::post('profile/update_password', '\App\Http\Controllers\Backend\ProfileController@update_password');
+        Route::post('data/delete', '\App\Http\Controllers\Backend\DataController@delete')->name('data.delete');
+
     });
 });
 
-Route::group(['namespace'=>'Frontend'], function () {
-    Route::prefix('home')->group(function () {
-        Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
-    });
-});
+//Route::group(['namespace'=>'Frontend'], function () {
+    //Route::prefix('home')->group(function () {
+        //Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
+    //});
+//});

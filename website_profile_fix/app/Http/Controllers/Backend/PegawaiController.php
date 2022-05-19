@@ -53,7 +53,7 @@ class PegawaiController extends Controller
             $file           = $request->file('image');
             $nama_file      = $file->getClientOriginalName();
             $file->move('backend/assets/img/',$file->getClientOriginalName());
-            $pegawai->cover = $nama_file;
+            $pegawai->image = $nama_file;
         }
         $pegawai->name = $request->name;
         $pegawai->nip = $request->nip;

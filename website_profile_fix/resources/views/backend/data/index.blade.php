@@ -66,55 +66,93 @@
 
             <!-- Table Data Siswa -->
             <table class="table table-hover">
-              <thead>
-                <tr class="table-light">
-                  <th scope="col">#</th>
-                  <th scope="col">Kelas</th>
-                  <th scope="col">Tahun</th>
-                  <th scope="col">Jumlah</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-light">
-                  <th scope="row">1</th>
-                  <td>Brandon Jacob</td>
-                  <td>Designer</td>
-                  <td>28</td>
-                  <td>2016-05-25</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">2</th>
-                  <td>Bridie Kessler</td>
-                  <td>Developer</td>
-                  <td>35</td>
-                  <td>2014-12-05</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">3</th>
-                  <td>Ashleigh Langosh</td>
-                  <td>Finance</td>
-                  <td>45</td>
-                  <td>2011-08-12</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">4</th>
-                  <td>Angus Grady</td>
-                  <td>HR</td>
-                  <td>34</td>
-                  <td>2012-06-11</td>
-                </tr>
-                <tr class="table-light">
-                  <th scope="row">5</th>
-                  <td>Raheem Lehner</td>
-                  <td>Dynamic Division Officer</td>
-                  <td>47</td>
-                  <td>2011-04-19</td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- End Table Data Siswa -->
+                <thead>
+                  <tr class="table-light">
+                    <th scope="col">#</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">NIS</th>
+                    <th scope="col">Kelas</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Created At</th>
+                    <!--<th scope="col">Action</th>-->
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($siswa as $item)
+                  <tr class="table-light">
+                    <th scope="row">{{$item->id}}</th>
+                    <td>{{$item->nama}}</td>
+                    <td>{{$item->nis}}</td>
+                    <td>{{$item->kelas}}</td>
+                    <td>{{$item->jk}}</td>
+                    <td>{{$item->created_at}}</td>
+                    <!--<td>
+                      <div class="row">
+                        <div class="col-3">
+                          <a href="{{ route('jabatan.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
+                        </div>
+                        <div class="col-3">
+                          <form action="{{ route('jabatan.destroy',$item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus data?')"><i class="bi bi-trash-fill"></i></button>
+                          </form>
+                        </div>
+                      </div>
 
+                    </td>-->
+                  </tr>
+                  @endforeach
+                </tbody>
+            </table>
+
+              <!-- Centered Pagination -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <div class="col-1">
+                    {!! $siswa->links()!!}
+                  </div>
+                </ul>
+            </nav><!-- End Centered Pagination -->
+
+            <!--<a href="{{ route('jabatan.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>-->
+
+
+            <form method="POST" action="{{route('data.delete')}}" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <button type="button" class="btn btn-primary mr-5" data-bs-toggle="modal" data-bs-target="#basicModal">
+                    Import Excel
+                </button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+            <!-- Import Excel -->
+            <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <form method="POST" action="{{ route('data.store') }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                            </div>
+                            <div class="modal-body">
+
+
+
+                                <label>Pilih file excel</label>
+                                <div class="form-group">
+                                    <input type="file" name="file" required="required">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Import</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
           </div>
         </div>
       </div>
