@@ -16,37 +16,25 @@ class KontakController extends Controller
     }
     public function index()
     {
-        $kontak = null;
-        $kontak = DB::table('contacts')->paginate(5);
+
+        $kontak = DB::table('contacts')->get();
         return view('backend.kontak.index',compact('kontak'));
     }
-    public function create()
-    {
-        $kontak = null;
-        return view('backend.kontak.create',compact('kontak'));
-    }
+
     public function edit($id)
     {
         $kontak = DB::table('contacts')->where('id',$id)->first();
         return view('backend.kontak.edit',compact('kontak'));
     }
-    public function destroy($id)
-    {
-        DB::table('contacts')->where('id',$id)->delete();
-        return redirect()->route('kontak.index')->with('success','Data Creator Berhasil Dihapus');
-    }
     public function update($id, Request $request)
     {
         $kontak = Kontak::find($id);
-        if($request->hasFile('logo')){
-            $logo           = $request->file('logo');
-            $nama_file      = $logo->getClientOriginalName();
-            $logo->move('backend/assets/img/',$logo->getClientOriginalName());
-            $kontak->logo = $nama_file;
-        }
-        $kontak->jenis_kontak = $request->jenis;
-        $kontak->nama_kontak = $request->nama;
-        $kontak->link = $request->link;
+        $kontak->no = $request->no;
+        $kontak->alamat = $request->alamat;
+        $kontak->gmail = $request->gmail;
+        $kontak->fb = $request->fb;
+        $kontak->map = $request->map;
+        $kontak->yt = $request->yt;
         $kontak->save();
 
         return redirect()->route('kontak.index')->with('success','Data Telah Berhasil Diperbarui.');
@@ -55,13 +43,12 @@ class KontakController extends Controller
     public function store(Request $request)
     {
         $kontak = new Kontak;
-        $logo           = $request->file('logo');
-        $nama_file      = $logo->getClientOriginalName();
-        $logo->move('backend/assets/img/',$logo->getClientOriginalName());
-        $kontak->jenis_kontak = $request->jenis;
-        $kontak->nama_kontak = $request->nama;
-        $kontak->link = $request->link;
-        $kontak->logo = $nama_file;
+        $kontak->no = $request->no;
+        $kontak->alamat = $request->alamat;
+        $kontak->gmail = $request->gmail;
+        $kontak->fb = $request->fb;
+        $kontak->map = $request->map;
+        $kontak->yt = $request->yt;
         $kontak->save();
 
         return redirect()->route('kontak.index')->with('success','Data Telah Berhasil Ditambah.');

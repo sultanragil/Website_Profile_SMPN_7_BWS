@@ -59,6 +59,7 @@ class SaranaController extends Controller
         $image->move('backend/assets/img/',$image->getClientOriginalName());
         $sarana->nama = $request->nama;
         $sarana->desc = $request->desc;
+        $sarana->image = $nama_file;
         $sarana->save();
 
         return redirect()->route('sarana.index')->with('success','Data Telah Berhasil Ditambah.');

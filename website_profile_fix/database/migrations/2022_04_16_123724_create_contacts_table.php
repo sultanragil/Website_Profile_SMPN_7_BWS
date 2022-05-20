@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_kontak');
-            $table->string('nama_kontak');
-            $table->string('link');
-            $table->string('logo');
+            $table->string('no',15);
+            $table->string('alamat',200);
+            $table->string('gmail',50);
+            $table->string('fb',30);
+            $table->string('yt',200);
+            $table->string('open',100);
+            $table->string('map');
             $table->timestamps();
         });
     }

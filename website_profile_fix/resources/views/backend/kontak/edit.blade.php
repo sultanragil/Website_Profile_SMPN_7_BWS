@@ -67,22 +67,30 @@
             @csrf
             @method('PUT')
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Jenis Kontak</label>
-              <input type="text" class="form-control" id="inputNanme4" name="jenis" value="{{ isset($kontak) ? $kontak->jenis_kontak : '' }}">
+              <label for="inputNanme4" class="form-label">Contact Person</label>
+              <input type="number" class="form-control" id="inputNanme4" name="no" value="{{ isset($kontak) ? $kontak->no : '' }}">
             </div>
-            <input type="hidden" name="role" value="admin">
-            <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Nama Kontak</label>
-              <input type="text" class="form-control" id="inputEmail4" name="nama" value="{{ isset($kontak) ? $kontak->nama_kontak : '' }}">
+            <div class="col-10">
+              <label for="inputNanme4" class="form-label">Alamat</label>
+              <input type="text" class="form-control" id="inputNanme4" name="alamat" value="{{ isset($kontak) ? $kontak->alamat : '' }}">
             </div>
-            <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Link</label>
-              <input type="text" class="form-control" id="inputPassword4" name="link" value="{{ isset($kontak) ? $kontak->link : '' }}">
+            <div class="col-10">
+              <label for="inputNanme4" class="form-label">Gmail</label>
+              <input type="email" class="form-control" id="inputNanme4" name="gmail" value="{{ isset($kontak) ? $kontak->gmail : '' }}">
             </div>
-            <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Logo</label>
-              <input type="file" class="form-control" id="inputPassword4" name="logo">
+            <div class="col-10">
+              <label for="inputNanme4" class="form-label">Facebook</label>
+              <input type="text" class="form-control" id="inputNanme4" name="fb" value="{{ isset($kontak) ? $kontak->fb : '' }}">
             </div>
+            <div class="col-10">
+              <label for="inputNanme4" class="form-label">Maps</label>
+              <input type="text" class="form-control" id="inputNanme4" name="map" value="{{ isset($kontak) ? $kontak->map : '' }}">
+            </div>
+            <div class="col-10">
+              <label for="inputNanme4" class="form-label">YouTube</label>
+              <input type="text" class="form-control" id="inputNanme4" name="yt" value="{{ isset($kontak) ? $kontak->yt : '' }}">
+            </div>
+
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>
               <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
