@@ -78,6 +78,14 @@
                   {!! html_entity_decode($item->sejarah) !!}
                 </div>
             </div><!-- End Sejarah Card -->
+
+            <!-- Arti Logo Card -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Arti Logo</h5>
+                {!! html_entity_decode($item->arti_logo) !!}
+              </div>
+          </div><!-- End Arti Logo Card -->
     
             <!-- Visi Misi Card -->
             <div class="card">

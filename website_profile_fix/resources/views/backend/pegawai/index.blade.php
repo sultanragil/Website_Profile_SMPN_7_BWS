@@ -84,7 +84,7 @@
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->nip}}</td>
-                    <td class="col-3"><img src="{{ URL::to('backend/assets/img/', $item->image) }}" class="img-thumbnail"></td>
+                    <td class="col-3"><img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="400" height="500" class="img-thumbnail"></td>
                     <td>{{($item->category)}}</td>
                     <td>{{($item->job_name)}}</td>
                     <td>{{$item->created_at}}</td>

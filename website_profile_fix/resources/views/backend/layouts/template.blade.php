@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('backend/assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ asset('backend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('backend/assets/img/logo-favincon.png') }}" rel="icon">
+  <link href="{{ asset('backend/assets/img/logo-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -44,7 +44,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{ route('index') }}" class="logo d-flex align-items-center">
-        <img src="{{ asset('backend/assets/img/logo.png') }}" alt="">
+        <img src="{{ asset('backend/assets/img/logo-fix.png') }}" alt="">
         <span class="d-none d-lg-block">SMPN7 Admin</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -80,19 +80,9 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
+              <a class="dropdown-item d-flex align-items-center" href="{{ url('/front') }}">
+                <i class="bi bi-box-arrow-in-left"></i>
+                <span>Go To Homepage</span>
               </a>
             </li>
             <li>

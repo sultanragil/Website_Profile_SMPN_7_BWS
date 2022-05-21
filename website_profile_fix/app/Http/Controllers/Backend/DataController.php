@@ -18,7 +18,7 @@ class DataController extends Controller
     }
     public function index()
     {
-        $siswa = DB::table('students')->paginate(5);
+        $siswa = DB::table('students')->paginate(10);
         return view('backend.data.index',compact('siswa'));
     }
     public function store(Request $request)

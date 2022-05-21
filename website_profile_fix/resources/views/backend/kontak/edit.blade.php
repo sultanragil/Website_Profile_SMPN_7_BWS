@@ -68,11 +68,15 @@
             @method('PUT')
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Contact Person</label>
-              <input type="number" class="form-control" id="inputNanme4" name="no" value="{{ isset($kontak) ? $kontak->no : '' }}">
+              <input type="text" class="form-control" id="inputNanme4" name="no" value="{{ isset($kontak) ? $kontak->no : '' }}">
             </div>
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Alamat</label>
               <input type="text" class="form-control" id="inputNanme4" name="alamat" value="{{ isset($kontak) ? $kontak->alamat : '' }}">
+            </div>
+            <div class="col-10">
+              <label for="inputNanme4" class="form-label">Open Hours</label>
+              <input type="text" class="form-control" id="inputNanme4" name="open" value="{{ isset($kontak) ? $kontak->open : '' }}">
             </div>
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Gmail</label>
@@ -81,10 +85,6 @@
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Facebook</label>
               <input type="text" class="form-control" id="inputNanme4" name="fb" value="{{ isset($kontak) ? $kontak->fb : '' }}">
-            </div>
-            <div class="col-10">
-              <label for="inputNanme4" class="form-label">Maps</label>
-              <input type="text" class="form-control" id="inputNanme4" name="map" value="{{ isset($kontak) ? $kontak->map : '' }}">
             </div>
             <div class="col-10">
               <label for="inputNanme4" class="form-label">YouTube</label>

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('fb',30);
             $table->string('yt',200);
             $table->string('open',100);
-            $table->string('map');
+            //$table->text('map');
             $table->timestamps();
         });
     }

@@ -102,9 +102,9 @@
           
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Pie Chart</h5>
+              <h5 class="card-title">Data Siswa</h5>
 
-              <!-- Pie Chart -->
+              <!-- Pie Chart Siswa-->
               <canvas id="pieChart" style="max-height: 400px;"></canvas>
               <script>
                 document.addEventListener("DOMContentLoaded", () => {
@@ -112,13 +112,17 @@
                     type: 'pie',
                     data: {
                       labels: [
-                        'Red',
-                        'Blue',
-                        'Yellow'
+                        'Kelas 7',
+                        'Kelas 8',
+                        'Kelas 9'
                       ],
                       datasets: [{
                         label: 'My First Dataset',
-                        data: [300, 50, 100],
+                        data: [
+                          {{$query1}}, 
+                          {{$query2}}, 
+                          {{$query3}}
+                        ],
                         backgroundColor: [
                           'rgb(255, 99, 132)',
                           'rgb(54, 162, 235)',
@@ -195,6 +199,28 @@
             </div>
           </div><!-- End Event Card -->
 
+          <!-- Siswa Card -->
+          <div class="col-xxl-4 col-xl-12">
+
+            <div class="card info-card customers-card">
+
+              <div class="card-body">
+                <h5 class="card-title">Siswa <span>| Total Data</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="ri-database-2-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>{{ $siswa }}</h6>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div><!-- End Siswa Card -->
+
           <!-- User Card -->
           <div class="col-xxl-4 col-xl-12">
 
@@ -216,6 +242,8 @@
             </div>
 
           </div><!-- End User Card -->
+
+          
         </div>
       </div><!-- End Left side columns -->
 

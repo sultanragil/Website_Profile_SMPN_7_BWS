@@ -17,7 +17,7 @@ class KontakController extends Controller
     public function index()
     {
 
-        $kontak = DB::table('contacts')->get();
+        $kontak = Kontak::get();
         return view('backend.kontak.index',compact('kontak'));
     }
 
@@ -31,9 +31,10 @@ class KontakController extends Controller
         $kontak = Kontak::find($id);
         $kontak->no = $request->no;
         $kontak->alamat = $request->alamat;
+        $kontak->open = $request->open;
         $kontak->gmail = $request->gmail;
         $kontak->fb = $request->fb;
-        $kontak->map = $request->map;
+        //$kontak->map = $request->map;
         $kontak->yt = $request->yt;
         $kontak->save();
 
@@ -45,9 +46,10 @@ class KontakController extends Controller
         $kontak = new Kontak;
         $kontak->no = $request->no;
         $kontak->alamat = $request->alamat;
+        $kontak->open = $request->open;
         $kontak->gmail = $request->gmail;
         $kontak->fb = $request->fb;
-        $kontak->map = $request->map;
+        //$kontak->map = $request->map;
         $kontak->yt = $request->yt;
         $kontak->save();
 

@@ -27,6 +27,11 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/front', function () {
+    return redirect('/home');
+});
+
 Route::group(['namespace'=>'Backend'], function () {
     Route::prefix('dashboard')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Backend\IndexController');
@@ -52,6 +57,9 @@ Route::group(['namespace'=>'Backend'], function () {
 Route::group(['namespace'=>'Frontend'], function () {
     Route::prefix('home')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
-        Route::resource('/profile', '\App\Http\Controllers\Frontend\ProfileController');
+        Route::resource('/fprofile', '\App\Http\Controllers\Frontend\FProfileController');
+        Route::resource('/fkontak', '\App\Http\Controllers\Frontend\FKontakController');
+        Route::resource('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController');
+        Route::get('/fsarpras/{id}', [FSaranaController::class, 'show'])->name('fsarpras');
     });
 });

@@ -10,6 +10,8 @@ use App\Models\Carousel;
 use App\Models\User;
 use App\Models\Pegawai;
 use App\Models\Event;
+use App\Models\Siswa;
+use App\Models\Sarana;
 
 class IndexController extends Controller
 {
@@ -20,14 +22,28 @@ class IndexController extends Controller
     }
     public function index()
     {   
-        //$users = DB::table('users')->where('job','=',null)->count();
-        $sarana = DB::table('facilities')->count();
+        $siswa = Siswa::count();
+        $sarana = Sarana::count();
         $news = Event::latest()->take(5)->get();
         $event = Event::count();
         $pegawai = Pegawai::count();
         $user = User::count();
         $carousel = Carousel::all();
-        return view('backend.index',compact('carousel','user','pegawai','event','news','sarana'));
+        $query1 = Siswa::where('kelas', 7)->count();
+        $query2 = Siswa::where('kelas', 8)->count();
+        $query3 = Siswa::where('kelas', 9)->count();
+        return view('backend.index',
+        compact(
+        'carousel',
+        'user',
+        'pegawai',
+        'event',
+        'news',
+        'sarana',
+        'siswa',
+        'query1',
+        'query2',
+        'query3'));
     }
     
 }

@@ -69,38 +69,22 @@
                 <thead>
                   <tr class="table-light">
                     <th scope="col">#</th>
-                    <th scope="col">Nama</th>
                     <th scope="col">NIS</th>
-                    <th scope="col">Kelas</th>
+                    <th scope="col">Nama</th>
                     <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Kelas</th>
                     <th scope="col">Created At</th>
-                    <!--<th scope="col">Action</th>-->
                   </tr>
                 </thead>
                 <tbody>
                   @foreach ($siswa as $item)
                   <tr class="table-light">
                     <th scope="row">{{$item->id}}</th>
-                    <td>{{$item->nama}}</td>
                     <td>{{$item->nis}}</td>
-                    <td>{{$item->kelas}}</td>
+                    <td>{{$item->nama}}</td>
                     <td>{{$item->jk}}</td>
+                    <td>{{$item->kelas}}</td>
                     <td>{{$item->created_at}}</td>
-                    <!--<td>
-                      <div class="row">
-                        <div class="col-3">
-                          <a href="{{ route('jabatan.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
-                        </div>
-                        <div class="col-3">
-                          <form action="{{ route('jabatan.destroy',$item->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus data?')"><i class="bi bi-trash-fill"></i></button>
-                          </form>
-                        </div>
-                      </div>
-
-                    </td>-->
                   </tr>
                   @endforeach
                 </tbody>
@@ -108,7 +92,7 @@
 
               <!-- Centered Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
+                <ul class="pagination">
                   <div class="col-1">
                     {!! $siswa->links()!!}
                   </div>

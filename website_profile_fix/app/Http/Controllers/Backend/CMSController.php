@@ -100,6 +100,7 @@ class CMSController extends Controller
         }
         
         $profile->sejarah = $request->sejarah;
+        $profile->arti_logo = $request->arti_logo;
         $profile->visi = $request->visi;
         $profile->misi = $request->misi;
         $profile->kepsek_nama = $request->kepsek_nama;

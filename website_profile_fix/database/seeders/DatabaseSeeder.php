@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CarouselSeeder::class,
             ProfileSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }
