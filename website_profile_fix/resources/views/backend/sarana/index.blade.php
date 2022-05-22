@@ -45,7 +45,12 @@
 @endsection
 
 @section('content')
-
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">{{session('success')}}</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="pagetitle">
     <h1>Data Sarana & Prasarana</h1>
     <nav>
@@ -73,7 +78,7 @@
                   <th scope="col">Image</th>
                   <th scope="col">Deskripsi</th>
                   <th scope="col">Created At</th>
-                  <th scope="col">Updated At</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,10 +89,8 @@
                   <td class="col-3"><img src="{{ URL::to('backend/assets/img/', $item->image) }}" class="img-thumbnail"></td>
                   <td>{!! Str::limit($item->desc,230) !!}</td>
                   <td>{{$item->created_at}}</td>
-                  <td>{{$item->updated_at}}</td>
                   <td>
-                    <div class="row">
-                      <div class="col-3">
+                    <div class="col-3">
                         <a href="{{ route('sarana.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
                       </div>
                       <div class="col-3">
@@ -96,15 +99,13 @@
                           @method('DELETE')
                           <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Yakin akan menghapus data?')"><i class="bi bi-trash-fill"></i></button>
                         </form>
-                      </div>
                     </div>
-                    
                   </td>
-                </tr> 
+                </tr>
                 @endforeach
               </tbody>
             </table>
-  
+
             <!-- Centered Pagination -->
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
@@ -113,9 +114,9 @@
                 </div>
               </ul>
             </nav><!-- End Centered Pagination -->
-  
+
             <a href="{{ route('sarana.create') }}"><button type="button" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tambah</button></a>
-          
+
           </div>
         </div>
       </div>

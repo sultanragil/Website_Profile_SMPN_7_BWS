@@ -45,7 +45,12 @@
 @endsection
 
 @section('content')
-
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">{{session('success')}}</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="pagetitle">
     <h1>Data Event</h1>
     <nav>

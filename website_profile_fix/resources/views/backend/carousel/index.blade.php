@@ -45,7 +45,12 @@
 @endsection
 
 @section('content')
-
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">{{session('success')}}</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="pagetitle">
     <h1>Carousel</h1>
     <nav>
@@ -86,7 +91,7 @@
                         <a href="{{ route('carousel.edit',$item->id) }}"><button type="button" title="Edit" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button></a>
                       </td>
                     </tr>
-                @endforeach 
+                @endforeach
               </tbody>
             </table>
             <!-- End Table Carousel -->

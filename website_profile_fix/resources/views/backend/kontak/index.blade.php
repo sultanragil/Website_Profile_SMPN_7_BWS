@@ -45,7 +45,12 @@
 @endsection
 
 @section('content')
-
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">{{session('success')}}</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="pagetitle">
     <h1>Data Kontak</h1>
     <nav>
@@ -87,11 +92,11 @@
     <div class="row">
 
       <div class="col-lg-12">
- 
+
          <div class="card">
            <div class="card-body">
              <h5 class="card-title">Data Kontak</h5>
- 
+
              <section class="section contact">
                <div class="row gy-4">
                  <div class="col-xl-12">
@@ -114,7 +119,7 @@
                       <div class="info-box card">
                         <i class="bi bi-clock"></i>
                         <h3>Open Hours</h3>
-                        <p>{{$item->open}}</p> 
+                        <p>{{$item->open}}</p>
                       </div>
                     </div>
                      <div class="col-lg-4">
@@ -144,22 +149,22 @@
                      </div>
                    </div>
                  </div>
- 
+
                  <a href="{{ route('kontak.edit',$item->id) }}"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Edit</button></a>
                </div>
- 
-               
-               
-         
+
+
+
+
              </section>
            </div>
          </div>
-       </div>    
-       
- 
+       </div>
+
+
      </div>
     @endforeach
-    
+
   </section>
 
   @endsection

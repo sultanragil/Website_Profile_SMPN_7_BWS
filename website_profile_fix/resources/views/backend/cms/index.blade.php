@@ -45,7 +45,12 @@
 @endsection
 
 @section('content')
-
+@if (session('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">{{session('success')}}</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="pagetitle">
     <h1>Data CMS Profil Sekolah</h1>
     <nav>
@@ -86,7 +91,7 @@
                 {!! html_entity_decode($item->arti_logo) !!}
               </div>
           </div><!-- End Arti Logo Card -->
-    
+
             <!-- Visi Misi Card -->
             <div class="card">
                 <div class="card-body">
@@ -106,9 +111,9 @@
             <a href="{{ route('cms.edit',$item->id) }}"><button type="button" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Edit</button></a>
 
         </div>
-    
+
         <div class="col-lg-3">
-    
+
             <!-- Headmaster Card -->
             <div class="card">
                 <div class="card-body">
@@ -155,9 +160,9 @@
           </div><!-- End Logo Card -->
 
         </div>
-          
+
         @endforeach
-      
+
 
     </div>
   </section>
