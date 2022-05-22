@@ -62,7 +62,7 @@ Route::group(['namespace'=>'Frontend'], function () {
         Route::resource('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController');
         Route::resource('/fpegawai', '\App\Http\Controllers\Frontend\FPegawaiController');
         Route::resource('/fevent', '\App\Http\Controllers\Frontend\FEventController');    
-        Route::get('/fsarpras/{id}', [FSaranaController::class, 'show'])->name('fsarpras');
+        Route::get('/fsarpras/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fsarpras');
 
     });
 });
