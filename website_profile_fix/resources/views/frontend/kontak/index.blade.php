@@ -12,7 +12,7 @@
 @section('content')
     
 <!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
+<section id="contacts" class="contact">
   <div class="container">
 
     <div class="section-title">

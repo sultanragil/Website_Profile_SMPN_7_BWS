@@ -14,7 +14,7 @@
 
 <div class="tab-pane" id="tab-4">
   <h3>Berita</h3>
-  <section id="doctors" class="doctors section-bg">
+  <section id="events" class="doctors section-bg">
     <div class="container" data-aos="fade-up">                   
       <div class="row">
         @foreach ($event as $item)

@@ -12,7 +12,7 @@
 @section('content')
     
             <!-- ======= Profile Section ======= -->
-            <section id="departments" class="departments">
+            <section id="profiles" class="departments">
               <div class="container" data-aos="fade-up">
         
                 <div class="section-title">
@@ -26,25 +26,25 @@
                       <li class="nav-item">
                         <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
                           <h4>Sejarah</h4>
-                          <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
+                          <p>Navigasi Panel Sejarah.</p>
                         </a>
                       </li>
                       <li class="nav-item mt-2">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
                           <h4>Visi Misi</h4>
-                          <p>Voluptas vel esse repudiandae quo excepturi.</p>
+                          <p>Navigasi Panel Visi Misi.</p>
                         </a>
                       </li>
                       <li class="nav-item mt-2">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
                           <h4>Logo Sekolah</h4>
-                          <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
+                          <p>Navigasi Panel Logo Sekolah.</p>
                         </a>
                       </li>
                       <li class="nav-item mt-2">
                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
                           <h4>Pimpinan Sekolah</h4>
-                          <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>
+                          <p>Navigasi Panel Pimpinan Sekolah.</p>
                         </a>
                       </li>
                     </ul>

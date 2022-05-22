@@ -12,7 +12,7 @@
 @section('content')
     
 <!-- ======= Doctors Section ======= -->
-<section id="gallery" class="doctors section-bg">
+<section id="facilities" class="doctors section-bg">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">

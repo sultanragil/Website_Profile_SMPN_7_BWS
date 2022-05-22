@@ -42,12 +42,14 @@
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      @foreach ($contactview as $item)
       <div class="align-items-center d-none d-md-flex">
-        <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
+        <i class="bi bi-clock"></i> {{$item->open}}
       </div>
       <div class="d-flex align-items-center">
-        <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+        <i class="bi bi-phone"></i> Hubungi kami {{$item->no}}
       </div>
+      @endforeach
     </div>
   </div>
 
@@ -61,34 +63,41 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a class="nav-link scrollto" href="#hero"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="{{ url('/home') }}">Home Page</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li class="dropdown"><a class="nav-link scrollto" href="#profiles"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{ url('/home/fprofile') }}">Profile Page</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="nav-link scrollto" href="#employees"><span>Guru & Karyawan</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{ url('/home/fpegawai') }}">Guru & Karyawan Page</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="nav-link scrollto" href="#facilities"><span>Sarana & Prasarana</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{ url('/home/fsarpras') }}">Sarana & Prasarana Page</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="nav-link scrollto" href="#events"><span>Event</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{ url('/home/fevent') }}">Event Page</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="nav-link scrollto" href="#contacts"><span>Contact</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{{ url('/home/fkontak') }}">Contact Page</a></li>
+            </ul>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <a href="{{url('/dashboard')}}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Go To</span> Admin Dashboard</a>
 
     </div>
   </header><!-- End Header -->
@@ -101,32 +110,16 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url({{ asset('frontend/assets/img/slide/slide-1.jpg') }})">
-          <div class="container">
-            <h2>Welcome to <span>Medicio</span></h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url({{ asset('frontend/assets/img/slide/slide-2.jpg') }})">
-          <div class="container">
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url({{ asset('frontend/assets/img/slide/slide-3.jpg') }})">
-          <div class="container">
-            <h2>Sequi ea ut et est quaerat</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
+        @foreach ($carouselview as $item)
+            <!-- Slide  -->
+            <div class="carousel-item {{$item->id == 1 ? 'active' : '' }}" style="background-image: url({{ URL::to('backend/assets/img/', $item->image) }})">
+              <div class="container">
+                <h2>{{$item->judul}}</h2>
+                <p>{!! html_entity_decode($item->desc) !!}</p>
+              </div>
+            </div>
+        @endforeach
+        
 
       </div>
 
@@ -148,54 +141,46 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Medicio</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-youtube"></i></a>
+          @foreach ($contactview as $item)
+              <div class="col-lg-3 col-md-6">
+                <div class="footer-info">
+                  <h3>SMPN 7 Bondowoso</h3>
+                  <p>
+                    {{$item->alamat}}<br><br>
+                    <strong>Telepon :</strong> {{$item->no}}<br>
+                    <strong>Email:</strong> {{$item->gmail}}<br>
+                  </p>
+                  <div class="social-links mt-3">
+                    <a href="{{$item->fb}}" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="{{$item->yt}}" class="youtube"><i class="bx bxl-youtube"></i></a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
+          @endforeach
+          
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home') }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fprofile') }}">Profile</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fpegawai') }}">Guru & Karyawan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fsarpras') }}">Sarana & Prasarana</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fevent') }}">Event</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Developer</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://github.com/sultanragil">Maulana Sultan Ragil W.S.</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sulton Mubarok</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Abdul Aziz Rahmawan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Ivon Csianee Octaviana</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            
 
           </div>
 
