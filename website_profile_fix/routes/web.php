@@ -60,6 +60,9 @@ Route::group(['namespace'=>'Frontend'], function () {
         Route::resource('/fprofile', '\App\Http\Controllers\Frontend\FProfileController');
         Route::resource('/fkontak', '\App\Http\Controllers\Frontend\FKontakController');
         Route::resource('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController');
+        Route::resource('/fpegawai', '\App\Http\Controllers\Frontend\FPegawaiController');
+        Route::resource('/fevent', '\App\Http\Controllers\Frontend\FEventController');    
         Route::get('/fsarpras/{id}', [FSaranaController::class, 'show'])->name('fsarpras');
+
     });
 });
