@@ -61,7 +61,8 @@ Route::group(['namespace'=>'Frontend'], function () {
         Route::resource('/fkontak', '\App\Http\Controllers\Frontend\FKontakController');
         Route::resource('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController');
         Route::resource('/fpegawai', '\App\Http\Controllers\Frontend\FPegawaiController');
-        Route::resource('/fevent', '\App\Http\Controllers\Frontend\FEventController');    
+        Route::resource('/fevent', '\App\Http\Controllers\Frontend\FEventController');  
+        Route::get('/fevent/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fevent');  
         Route::get('/fsarpras/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fsarpras');
 
     });

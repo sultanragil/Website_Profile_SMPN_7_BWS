@@ -1,12 +1,12 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>Profile Page - SMPN 7</title>
+  <title>Pegawai Page - SMPN 7</title>
 @endsection
 
 @section('header')
-  <h1 class="display-4 fw-normal">Profile</h1>
-  <p class="lead fw-normal">Pegawai SMPN 7 Bondowoso</p>    
+  <h1 class="display-4 fw-normal">Halaman Pegawai</h1>
+  <p class="lead fw-normal">Pegawai SMPN 7 Bondowoso</h6>    
 @endsection
 
 @section('content')
@@ -25,9 +25,9 @@
             </div>
             <div class="member-info">
               <h4>{{$item->name}}</h4>
-              <span>{{$item->nip}}</span>
-              <span>{{$item->category}}</span>
-              <span>{{$item->job_name}}</span>
+              <h6>{{$item->nip}}</h6>
+              <h6>{{$item->category}}</h6>
+              <h6>{{$item->job_name}}</h6>
             </div>
           </div>
         </div>
@@ -50,9 +50,9 @@
             </div>
             <div class="member-info">
               <h4>{{$item->name}}</h4>
-              <span>{{$item->nip}}</span>
-              <span>{{$item->category}}</span>
-              <span>{{$item->job_name}}</span>
+              <h6>{{$item->nip}}</h6>
+              <h6>{{$item->category}}</h6>
+              <h6>{{$item->job_name}}</h6>
             </div>
           </div>
         </div>
