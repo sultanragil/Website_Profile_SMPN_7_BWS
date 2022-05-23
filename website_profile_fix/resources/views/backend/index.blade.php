@@ -200,7 +200,7 @@
           </div><!-- End Event Card -->
 
           <!-- Siswa Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <div class="col-xxl-4 col-md-6">
 
             <div class="card info-card customers-card">
 
@@ -222,7 +222,7 @@
           </div><!-- End Siswa Card -->
 
           <!-- User Card -->
-          <div class="col-xxl-4 col-xl-12">
+          <div class="col-xxl-4 col-md-6">
 
             <div class="card info-card customers-card">
 
@@ -250,27 +250,27 @@
       <!-- Right side columns -->
       <div class="col-lg-4">
 
-        <!-- News & Updates Traffic -->
-        <div class="card">
+      <!-- News & Updates Traffic -->
+      <div class="card">
 
-          <div class="card-body pb-0">
-            <h5 class="card-title">News &amp; Updates <span>| Newest</span></h5>
+        <div class="card-body pb-0">
+          <h5 class="card-title">News &amp; Updates <span>| Newest</span></h5>
 
-            <div class="news">
-              @foreach ($news as $item)
-                  <div class="post-item clearfix">
-                    <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" alt="">
-                    <h4><a href="#">{{$item->judul}}</a></h4>
-                    <p>{!! Str::limit($item->isi,150) !!}</p>
-                  </div>
-                  <br> 
-              @endforeach
-            </div><!-- End sidebar recent posts-->
+          <div class="news">
+            @foreach ($news as $item)
+                <div class="post-item clearfix">
+                  <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" alt="">
+                  <h4><a href="#">{{$item->judul}}</a></h4>
+                  <p>{!! Str::limit($item->isi,150) !!}</p>
+                </div>
+                <br> 
+            @endforeach
+          </div><!-- End sidebar recent posts-->
 
-          </div>
-        </div><!-- End News & Updates -->
+        </div>
+      </div><!-- End News & Updates -->
 
-      </div><!-- End Right side columns -->
+    </div><!-- End Right side columns -->
 
     </div>
   </section>

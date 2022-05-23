@@ -55,11 +55,15 @@
                       <div class="tab-pane active show" id="tab-1">
                         <h3>Sejarah</h3>
                         <div class="row">
-                          <div class="col-12">
-                            <img src="{{ URL::to('backend/assets/img/', $item->sekolah_img) }}" width="1200" height="600" alt="" class="img-fluid">
+                          <div class="col-lg-6" data-aos="fade-right">
+                            <img src="{{ URL::to('backend/assets/img/', $item->sekolah_img) }}" width="1000" height="600" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                            <p>
+                              {!! html_entity_decode($item->sejarah) !!}
+                            </p>
                           </div>
                         </div>
-                        {!! html_entity_decode($item->sejarah) !!}
                       </div>
                       <div class="tab-pane" id="tab-2">
                         <h3>Visi Misi</h3>
@@ -71,8 +75,16 @@
                       </div>
                       <div class="tab-pane" id="tab-3">
                         <h3>Logo Sekolah</h3>
-                        <img src="{{ URL::to('backend/assets/img/', $item->logo) }}" alt="" class="img-fluid">
-                        {!! html_entity_decode($item->arti_logo) !!}
+                        <div class="row">
+                          <div class="col-lg-6" data-aos="fade-right">
+                            <img src="{{ URL::to('backend/assets/img/', $item->logo) }}" width="1000" height="600" class="img-fluid" alt="">
+                          </div>
+                          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                            <p>
+                              {!! html_entity_decode($item->arti_logo) !!}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                       <div class="tab-pane" id="tab-4">
                         <h3>Pimpinan Sekolah</h3>
