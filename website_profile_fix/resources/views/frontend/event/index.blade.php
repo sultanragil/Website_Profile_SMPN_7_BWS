@@ -21,7 +21,7 @@
         <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
           <div class="member" data-aos="fade-up" data-aos-delay="300">
             <div class="member-img">
-              <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" width="200" height="250" class="" alt="">
+              <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" width="400" height="250" class="" alt="">
             </div>
             <div class="member-info">
               <h4>{{$item->judul}}</h4>

@@ -41,7 +41,7 @@
 @endsection
 
 @section('actprofil')
-    <a class="nav-link collapsed" href="{{ route('profile.index') }}">
+    <a class="nav-link collapsed" href="{{ route('cms.index') }}">
 @endsection
 
 @section('content')

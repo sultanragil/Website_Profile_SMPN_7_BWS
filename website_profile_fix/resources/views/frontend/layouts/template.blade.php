@@ -57,7 +57,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="{{ asset('frontend/assets/img/logo_home.png') }}" alt=""></a>
+      <a href="{{ url('/home') }}" class=""><img src="{{ asset('frontend/assets/img/logo smpn7.png') }}" height="70" width="250" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 

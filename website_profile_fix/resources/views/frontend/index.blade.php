@@ -5,7 +5,7 @@
   <main id="main">
 
     <!-- ======= Profile Section ======= -->
-    <section id="about" class="about">
+    <section id="profiles" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -25,7 +25,7 @@
         @endforeach
         <br>
         <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-            <button type="submit" class="btn btn-light"><a href="/home/fpegawai">Lebih Selengkapnya >></a></button>
+            <button type="submit" class="btn btn-light"><a href="/home/fprofile">Lebih Selengkapnya >></a></button>
         </div>
       </div>
     </section><!-- End Profile Section -->
@@ -58,7 +58,7 @@
               <i class="fas fa-building"></i>
               <span data-purecounter-start="0" data-purecounter-end="{{$count3}}" data-purecounter-duration="2" class="purecounter"></span>
               <p><strong>Sarana & Prasarana</strong> yang dilengkapi oleh sekolah ini.</p>
-              <a href="/home/fsarana">Find out more &raquo;</a>
+              <a href="/home/fsarpras">Find out more &raquo;</a>
             </div>
           </div>
 
@@ -110,48 +110,6 @@
       </div>
     </section><!-- End Counts Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="events" class="testimonials">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Events</h2>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            @foreach ($event as $item)
-              <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
-                <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-                  <div class="card" style="col-4 col-sm-2 col-md-3 col-xl-4 d-flex align-items-stretch">
-                    <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" width="300" height="300" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$item->judul}}</h5>
-                      <p class="card-text">{!! Str::limit($item->isi,100) !!}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">{{$item->users}}</li>
-                      <li class="list-group-item">{!! Str::words($item->created_at,10) !!}</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="{{ route('fevent', $item->id) }}" class="card-link">Lebih Selengkapnya</a>
-                    </div>
-                  </div>
-
-                </div>
-                
-              </div><!-- End testimonial item -->
-            @endforeach
-            
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
     <!-- ======= Guru dan Karyawan Section ======= -->
     <section id="employees" class="doctors section-bg">
       <div class="container" data-aos="fade-up">
@@ -178,7 +136,7 @@
             </div>
             @endforeach
             <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-              <button type="submit" class="btn btn-light"><a href="/home/fprofile">Lebih Selengkapnya >></a></button>
+              <button type="submit" class="btn btn-light"><a href="/home/fpegawai">Lebih Selengkapnya >></a></button>
             </div>
 
         </div>
@@ -209,6 +167,50 @@
 
       </div>
     </section><!-- End Sarana dan Prasarana Section -->
+
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="testimonials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Events</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            @foreach ($event as $item)
+              <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
+                  <div class="card" style="col-4 col-sm-2 col-md-3 col-xl-4 d-flex align-items-stretch">
+                    <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" width="300" height="300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$item->judul}}</h5>
+                      <p class="card-text">{!! Str::limit($item->isi,100) !!}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">{{$item->users}}</li>
+                      <li class="list-group-item">{!! Str::words($item->created_at,10) !!}</li>
+                    </ul>
+                    <div class="card-body">
+                      <a href="{{ route('fevent', $item->id) }}" class="card-link">Lebih Selengkapnya</a>
+                    </div>
+                  </div>
+
+                </div>
+                
+              </div><!-- End Events item -->
+            @endforeach
+            
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
+          <button type="submit" class="btn btn-light"><a href="/home/fevent">Lebih Selengkapnya >></a></button>
+        </div>
+      </div>
+    </section><!-- End Events Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contacts" class="contact">
@@ -249,23 +251,25 @@
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Hubungi Kami</h3>
-                  <p>Nomor Telepon<br>{{$item->no}}</p>
+                  <i class="bx bx-time"></i>
+                  <h3>Jam Buka</h3>
+                  <p>Kunjungi kami<br>{{$item->open}}</p>
                 </div>
               </div>
             </div>
-
           </div>
 
           <div class="col-lg-6">
-
             <div class="row">
               <div class="col-md-12">
                 <div class="info-box">
-                  <i class="bx bx-time"></i>
-                  <h3>Jam Buka</h3>
-                  <p>{{$item->open}}</p>
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Hubungi Kami</h3>
+                  <p>{{$item->no}}</p>
+                  <!--<p><b>Contact Person 1: </b>{{$item->no}}</p>
+                  <p><b>Contact Person 2: </b>{{$item->no}}</p>
+                  <p><b>Contact Person 3: </b>{{$item->no}}</p>
+                  <p>Nomor Telepon<br>{{$item->no}}</p>-->
                 </div>
               </div>
               <div class="col-md-6">
