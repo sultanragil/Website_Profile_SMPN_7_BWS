@@ -18,16 +18,16 @@
     <div class="container" data-aos="fade-up">                   
       <div class="row">
         @foreach($pegawai as $item)
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
           <div class="member" data-aos="fade-up" data-aos-delay="100">
             <div class="member-img">
-              <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="400" height="500" class="" alt="">
+              <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="300" height="350" class="" alt="">
             </div>
             <div class="member-info">
               <h4>{{$item->name}}</h4>
               <h6>{{$item->nip}}</h6>
-              <h6>{{$item->category}}</h6>
-              <h6>{{$item->job_name}}</h6>
+              <h6>{{$item->category}} {{$item->job_name}}</h6>
+              
             </div>
           </div>
         </div>
@@ -43,10 +43,10 @@
     <div class="container" data-aos="fade-up">                   
       <div class="row">
         @foreach($karyawan as $item)
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
           <div class="member" data-aos="fade-up" data-aos-delay="100">
             <div class="member-img">
-              <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="400" height="500" class="" alt="">
+              <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="300" height="350" class="" alt="">
             </div>
             <div class="member-info">
               <h4>{{$item->name}}</h4>
