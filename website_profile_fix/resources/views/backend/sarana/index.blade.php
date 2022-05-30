@@ -82,9 +82,10 @@
                 </tr>
               </thead>
               <tbody>
+                @php $no = 1; @endphp
                 @foreach ($sarana as $item)
                 <tr class="table-light">
-                  <th scope="row">{{$item->id}}</th>
+                  <th scope="row">{{$no++}}</th>
                   <td>{{$item->nama}}</td>
                   <td class="col-3"><img src="{{ URL::to('backend/assets/img/', $item->image) }}" class="img-thumbnail"></td>
                   <td>{!! Str::limit($item->desc,230) !!}</td>

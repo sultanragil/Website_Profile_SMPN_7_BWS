@@ -37,7 +37,7 @@ class SaranaController extends Controller
     }
     public function update($id, Request $request)
     {
-        $sarana = facilities::find($id);
+        $sarana = Sarana::find($id);
         if($request->hasFile('image')){
             $image           = $request->file('image');
             $nama_file      = $image->getClientOriginalName();
@@ -50,7 +50,7 @@ class SaranaController extends Controller
 
         return redirect()->route('sarana.index')->with('success','Data Telah Berhasil Diperbarui.');
     }
-    
+
     public function store(Request $request)
     {
         $sarana = new Sarana;

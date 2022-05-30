@@ -84,9 +84,10 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @php $no = 1; @endphp
                   @foreach ($pegawai as $item)
                   <tr class="table-light">
-                    <th scope="row">{{$item->id}}</th>
+                    <th scope="row">{{$no++}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->nip}}</td>
                     <td class="col-3"><img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="400" height="500" class="img-thumbnail"></td>

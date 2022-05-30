@@ -11,8 +11,8 @@ class CMSController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth'); /*Hak Akses Login*/
-        $this->middleware('auth'); /*Hak Akses Super Admin*/
+        $this->middleware('auth'); /*Hak Akses Login*/
+        //$this->middleware('admin'); /*Hak Akses Super Admin*/
     }
     public function index()
     {
@@ -67,24 +67,24 @@ class CMSController extends Controller
     public function update($id, Request $request)
     {
         $profile = Profile::find($id);
-    
+
         if($request->hasFile('sekolah_img')){
             $file           = $request->file('sekolah_img');
             $nama_file      = $file->getClientOriginalName();
             $file->move('backend/assets/img/',$file->getClientOriginalName());
-            $profile->sekolah_img = $nama_file;  
+            $profile->sekolah_img = $nama_file;
         }
         if($request->hasFile('logo')){
             $file1           = $request->file('logo');
             $nama_file1      = $file1->getClientOriginalName();
             $file1->move('backend/assets/img/',$file1->getClientOriginalName());
-            $profile->logo = $nama_file1;   
+            $profile->logo = $nama_file1;
         }
         if($request->hasFile('kepsek_img')){
             $file2           = $request->file('kepsek_img');
             $nama_file2      = $file2->getClientOriginalName();
             $file2->move('backend/assets/img/',$file2->getClientOriginalName());
-            $profile->kepsek_img = $nama_file2;       
+            $profile->kepsek_img = $nama_file2;
         }
         if($request->hasFile('wakepsek1_img')){
             $file3           = $request->file('wakepsek1_img');
@@ -98,7 +98,7 @@ class CMSController extends Controller
             $file4->move('backend/assets/img/',$file4->getClientOriginalName());
             $profile->wakepsek2_img = $nama_file4;
         }
-        
+
         $profile->sejarah = $request->sejarah;
         $profile->arti_logo = $request->arti_logo;
         $profile->visi = $request->visi;

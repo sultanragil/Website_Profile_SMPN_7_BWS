@@ -11,8 +11,8 @@ class CarouselController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth'); /*Hak Akses Login*/
-        $this->middleware('auth'); /*Hak Akses Super Admin*/
+        $this->middleware('auth'); /*Hak Akses Login*/
+        //$this->middleware('admi'); /*Hak Akses Super Admin*/
     }
     public function index()
     {
@@ -46,13 +46,13 @@ class CarouselController extends Controller
     public function update($id, Request $request)
     {
         $carousel = Carousel::find($id);
-    
+
         if($request->hasFile('image')){
             $file           = $request->file('image');
             $nama_file      = $file->getClientOriginalName();
             $file->move('backend/assets/img/',$file->getClientOriginalName());
             $carousel->image = $nama_file;
-            
+
         }
         $carousel->judul = $request->judul;
         $carousel->desc = $request->desc;

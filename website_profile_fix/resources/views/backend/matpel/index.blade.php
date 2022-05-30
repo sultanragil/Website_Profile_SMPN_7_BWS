@@ -74,15 +74,16 @@
             <thead>
               <tr class="table-light">
                 <th scope="col">#</th>
-                <th scope="col">Nama Mapel</th>
+                <th scope="col">Jabatan</th>
                 <th scope="col">Created At</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
+              @php $no = 1; @endphp
               @foreach ($courses as $item)
               <tr class="table-light">
-                <th scope="row">{{$item->id}}</th>
+                <th scope="row">{{$no++}}</th>
                 <td>{{$item->name}}</td>
                 <td>{{$item->created_at}}</td>
                 <td>

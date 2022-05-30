@@ -82,9 +82,10 @@
               </tr>
             </thead>
             <tbody>
+              @php $no = 1; @endphp
               @foreach ($user as $item)
               <tr class="table-light">
-                <th scope="row">{{$item->id}}</th>
+                <th scope="row">{{$no++}}</th>
                 <td>{{$item->name}}</td>
                 <td>{{$item->email}}</td>
                 <td>{{$item->role}}</td>

@@ -11,8 +11,8 @@ class EventController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth'); /*Hak Akses Login*/
-        $this->middleware('auth'); /*Hak Akses Super Admin*/
+        $this->middleware('auth'); /*Hak Akses Login*/
+        //$this->middleware('admin'); /*Hak Akses Super Admin*/
     }
     public function index()
     {
