@@ -19,5 +19,5 @@
 # 4. Lalu 'php artisan key:generate'
 #
 # NB : command diatas dijalankan tanpa tanda petik ( '' )
-#
+# Test
 #
