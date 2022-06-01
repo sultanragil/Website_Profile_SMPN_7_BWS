@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Profile </title>
+    <title>Dashboard - Profile User</title>
 @endsection
 
 @section('actdash')
@@ -56,7 +56,7 @@
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item active">Profile</li>
+        <li class="breadcrumb-item active">Profile User</li>
       </ol>
     </nav>
     </div><!-- End Page Title -->
@@ -71,12 +71,12 @@
                 <img src="{{ URL::to('backend/assets/img/', $user->image) }}" alt="Profile" class="rounded-circle">
                 <h2>{{$user->name}}</h2>
                 <h3>{{$user->role}}</h3>
-                <div class="social-links mt-2">
+                <!--<div class="social-links mt-2">
                   <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                   <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                   <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                   <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
 

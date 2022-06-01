@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Sarana & Prasarana > Edit Data </title>
+    <title>Dashboard - Edit Data Sarana</title>
 @endsection
 
 @section('actdash')
@@ -47,12 +47,12 @@
 @section('content')
 
   <div class="pagetitle">
-    <h1>Data Tables</h1>
+    <h1>Data Sarana & Prasarana</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('sarana.index') }}">Sarana & Prasarana</a></li>
-        <li class="breadcrumb-item active">Edit Data</li>
+        <li class="breadcrumb-item active">Edit Sarana</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Edit Data Form</h5>
+          <h5 class="card-title">Form Edit Data</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ isset($sarana) ? route('sarana.update',$sarana->id) : route('sarana.store') }}" class="row g-3" enctype="multipart/form-data">
@@ -72,6 +72,7 @@
             </div>
             <input type="hidden" name="role" value="admin">
             <div class="form-group">
+              <label for="inputNanme4" class="form-label">Deskripsi</label>
               <textarea name="desc" class="form-control tinymce-editor">{{ isset($sarana) ? $sarana->desc : '' }}</textarea>
             </div>
             <div class="col-md-4">

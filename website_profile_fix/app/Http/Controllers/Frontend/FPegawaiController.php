@@ -14,12 +14,12 @@ class FPegawaiController extends Controller
         $pegawai = DB::table('employees')
         ->join('jobs','employees.job', '=' ,'jobs.id')
         ->select('employees.*', 'jobs.name as job_name', 'jobs.id as job_id')
-        ->where('category', '=', 'guru')
+        ->where('category', '=', 'Guru')
         ->paginate(6);
         $karyawan = DB::table('employees')
         ->join('jobs','employees.job', '=' ,'jobs.id')
         ->select('employees.*', 'jobs.name as job_name', 'jobs.id as job_id')
-        ->where('category', '=', 'karyawan')
+        ->where('category', '=', 'Karyawan')
         ->paginate(6);
         return view('frontend.pegawai.index',compact('pegawai','karyawan'));
     }

@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Carousel </title>
+    <title>Dashboard - Edit Data Carousel </title>
 @endsection
 
 @section('actdash')
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Form Edit Data Carousel</h5>
+          <h5 class="card-title">Form Edit Data</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ route('carousel.update',$carousel->id) }}" class="row g-3" enctype="multipart/form-data">
@@ -69,7 +69,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-lg-6">
-                  <label for="inputEmail4" class="form-label">Deskripsi</label>
+                  <label for="inputEmail4" class="form-label">Deskripsi Pendek</label>
                   <textarea name="desc" class="form-control tinymce-editor">{{ isset($carousel) ? $carousel->desc : '' }}</textarea>
                 </div>
                 <div class="col-lg-6">

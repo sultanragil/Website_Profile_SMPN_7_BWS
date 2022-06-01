@@ -1,12 +1,12 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>Event Page - SMPN 7</title>
+  <title>SMPN 7 - Halaman Event</title>
 @endsection
 
 @section('header')
-  <h1 class="display-4 fw-normal">Berita & Acara</h1>
-  <p class="lead fw-normal">Berita dan Acara SMPN 7 Bondowoso</p>    
+  <h1 class="display-4 fw-normal">Event</h1>
+  <p class="lead fw-normal">Halaman ini adalah halaman event yang diadakan di SMPN 7 Bondowoso</p>    
 @endsection
 
 @section('content')

@@ -62,32 +62,6 @@
   </div><!-- End Page Title -->
 
   <section class="section">
-    <style>
-      .map-responsive{
-
-      overflow:hidden;
-
-      padding-bottom:56.25%;
-
-      position:relative;
-
-      height:0;
-
-      }
-      .map-responsive iframe{
-
-      left:0;
-
-      top:0;
-
-      height:100%;
-
-      width:100%;
-
-      position:absolute;
-
-      }
-    </style>
     @foreach ($kontak as $item)
     <div class="row">
 
@@ -118,7 +92,7 @@
                      <div class="col-lg-4">
                       <div class="info-box card">
                         <i class="bi bi-clock"></i>
-                        <h3>Open Hours</h3>
+                        <h3>Jadwal Buka</h3>
                         <p>{{$item->open}}</p>
                       </div>
                     </div>

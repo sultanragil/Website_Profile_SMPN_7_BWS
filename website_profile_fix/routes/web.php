@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes([
     'register' => false, // Register Routes...
@@ -50,20 +50,27 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/import_data', '\App\Http\Controllers\Backend\ImportExcelController');
         Route::post('profile/update_password', '\App\Http\Controllers\Backend\ProfileController@update_password');
         Route::post('data/delete', '\App\Http\Controllers\Backend\DataController@delete')->name('data.delete');
+        Route::get('/dashboard', '\App\Http\Controllers\Backend\IndexController@index')->name('dashboard');
 
     });
 });
 
 Route::group(['namespace'=>'Frontend'], function () {
-    Route::prefix('home')->group(function () {
+    Route::prefix('/')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
         Route::resource('/fprofile', '\App\Http\Controllers\Frontend\FProfileController');
         Route::resource('/fkontak', '\App\Http\Controllers\Frontend\FKontakController');
         Route::resource('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController');
         Route::resource('/fpegawai', '\App\Http\Controllers\Frontend\FPegawaiController');
-        Route::resource('/fevent', '\App\Http\Controllers\Frontend\FEventController');  
+        Route::resource('/fevent', '\App\Http\Controllers\Frontend\FEventController');
+        Route::get('/', '\App\Http\Controllers\Frontend\IndexController@index')->name('homepage');
+        Route::get('/fprofile', '\App\Http\Controllers\Frontend\FProfileController@index')->name('profilepage');
+        Route::get('/fkontak', '\App\Http\Controllers\Frontend\FKontakController@index')->name('kontakpage');
+        Route::get('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController@index')->name('saranapage');
+        Route::get('/fpegawai', '\App\Http\Controllers\Frontend\FPegawaiController@index')->name('pegawaipage');
+        Route::get('/fevent', '\App\Http\Controllers\Frontend\FEventController@index')->name('eventpage');   
         Route::get('/fevent/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fevent');  
-        Route::get('/fsarpras/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fsarpras');
+        Route::get('/fsarpras/{id}', '\App\Http\Controllers\Frontend\FSaranaController@show')->name('fsarpras');
 
     });
 });

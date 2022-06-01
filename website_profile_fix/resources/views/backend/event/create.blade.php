@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Event > Create New Data </title>
+    <title>Dashboard - Tambah Data Event</title>
 @endsection
 
 @section('actdash')
@@ -47,12 +47,12 @@
 @section('dashboard')
 
 <div class="pagetitle">
-  <h1>Data Tables</h1>
+  <h1>Data Event</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
       <li class="breadcrumb-item"><a href="{{ route('event.index') }}">Event</a></li>
-      <li class="breadcrumb-item active">Create Data</li>
+      <li class="breadcrumb-item active">Tambah Event</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Create New Data Form</h5>
+          <h5 class="card-title">Form Data Baru</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ route('event.store') }}" class="row g-3" enctype="multipart/form-data">
@@ -70,10 +70,11 @@
               <input type="text" class="form-control" id="inputNanme4" name="judul" required>
             </div>
             <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Cover</label>
+              <label for="inputEmail4" class="form-label">Image</label>
               <input type="file" class="form-control" id="inputEmail4" name="image" required>
             </div>
             <div class="form-group">
+              <label for="inputEmail4" class="form-label">Deskripsi</label>
               <textarea name="isi" class="form-control tinymce-editor"></textarea>
             </div>
             <input type="hidden" name="id_user" value="{{Auth::user()->id}}">

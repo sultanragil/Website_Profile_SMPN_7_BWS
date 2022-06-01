@@ -25,7 +25,10 @@ class IndexController extends Controller
         $query2 = Siswa::where('kelas', 8)->count();
         $query3 = Siswa::where('kelas', 9)->count();
         $profile = Profile::get();
-        $pegawai = Pegawai::inRandomOrder()->take(4)->get();
+        $pegawai = DB::table('employees')
+        ->join('jobs','employees.job', '=' ,'jobs.id')
+        ->select('employees.*', 'jobs.name as job_name', 'jobs.id as job_id')
+        ->inRandomOrder()->take(4)->get();
         $sarana = Sarana::inRandomOrder()->take(5)->get();
         $event = DB::table('events')
                     ->join('users', 'events.id_user', '=', 'users.id')

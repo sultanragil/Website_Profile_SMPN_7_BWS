@@ -1,7 +1,7 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>Facilities Page - SMPN 7</title>
+  <title>SMPN 7 - Sarana & Prasarana</title>
 @endsection
 
 @section('header')
@@ -17,7 +17,6 @@
 
       <div class="section-title">
         <h2>Sarana & Prasarana</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
       </div>
 
       <div class="row">
@@ -26,10 +25,10 @@
           <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="800" height="400" class="img-fluid" alt="">
+                <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="600" height="400" class="" alt="">
               </div>
               <div class="member-info">
-                <h4><a href="{{ route('fsarpras', $item->id) }}">{{$item->nama}}</a></h4>
+                <h5><a href="{{ route('fsarpras', $item->id) }}">{{$item->nama}}</a></h5>
               </div>
             </div>
           </div> 

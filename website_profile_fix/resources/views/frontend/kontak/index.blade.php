@@ -1,11 +1,11 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>Contact Page - SMPN 7</title>
+  <title>SMPN 7 - Halaman Kontak</title>
 @endsection
 
 @section('header')
-  <h1 class="display-4 fw-normal">Contact</h1>
+  <h1 class="display-4 fw-normal">Kontak</h1>
   <p class="lead fw-normal">Halaman ini adalah halaman kontak sekolah SMPN 7 Bondowoso</p>    
 @endsection
 
@@ -16,8 +16,7 @@
   <div class="container">
 
     <div class="section-title">
-      <h2>Contact</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <h2>Kontak</h2>
     </div>
 
   </div>

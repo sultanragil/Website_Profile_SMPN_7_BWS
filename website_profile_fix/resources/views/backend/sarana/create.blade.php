@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Sarana > Create New Data </title>
+    <title>Dashboard - Tambah Data Sarana </title>
 @endsection
 
 @section('actdash')
@@ -47,12 +47,12 @@
 @section('content')
 
 <div class="pagetitle">
-  <h1>Data Tables</h1>
+  <h1>Data Sarana & Prasarana</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
       <li class="breadcrumb-item"><a href="{{ route('sarana.index') }}">Sarana & Prasarana</a></li>
-      <li class="breadcrumb-item active">Create Data</li>
+      <li class="breadcrumb-item active">Tambah Sarana</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Create New Data Form</h5>
+          <h5 class="card-title">Form Data Baru</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ route('sarana.store') }}" class="row g-3" enctype="multipart/form-data" >
@@ -74,6 +74,7 @@
                 <input type="file" class="form-control" id="inputEmail4" name="image" required>
               </div>
               <div class="form-group">
+                <label for="inputEmail4" class="form-label">Deskripsi</label>
                 <textarea name="desc" class="form-control tinymce-editor"></textarea>
               </div>
             <div class="left-text">

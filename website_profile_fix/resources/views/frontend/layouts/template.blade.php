@@ -57,47 +57,47 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="{{ url('/home') }}" class=""><img src="{{ asset('frontend/assets/img/logo smpn7.png') }}" height="70" width="250" alt=""></a>
+      <a href="{{ route('homepage') }}" class=""><img src="{{ asset('frontend/assets/img/logo smpn7.png') }}" height="70" width="250" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li class="dropdown"><a class="nav-link scrollto" href="#hero"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a class="nav-link scrollto" href="#hero"><span>Beranda</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ url('/home') }}">Home Page</a></li>
+              <li><a href="{{ route('homepage') }}">Halaman Beranda</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a class="nav-link scrollto" href="#profiles"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a class="nav-link scrollto" href="#profiles"><span>Profil Sekolah</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ url('/home/fprofile') }}">Profile Page</a></li>
+              <li><a href="{{ route('profilepage') }}">Halaman Profil Sekolah</a></li>
             </ul>
           </li>
           <li class="dropdown"><a class="nav-link scrollto" href="#employees"><span>Guru & Karyawan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ url('/home/fpegawai') }}">Guru & Karyawan Page</a></li>
+              <li><a href="{{ route('pegawaipage') }}">Halaman Guru & Karyawan</a></li>
             </ul>
           </li>
           <li class="dropdown"><a class="nav-link scrollto" href="#facilities"><span>Sarana & Prasarana</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ url('/home/fsarpras') }}">Sarana & Prasarana Page</a></li>
+              <li><a href="{{ route('saranapage') }}">Halaman Sarana & Prasarana</a></li>
             </ul>
           </li>
           <li class="dropdown"><a class="nav-link scrollto" href="#events"><span>Event</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ url('/home/fevent') }}">Event Page</a></li>
+              <li><a href="{{ route('eventpage') }}">Halaman Event</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a class="nav-link scrollto" href="#contacts"><span>Contact</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a class="nav-link scrollto" href="#contacts"><span>Kontak</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ url('/home/fkontak') }}">Contact Page</a></li>
+              <li><a href="{{ route('kontakpage') }}">Halaman Kontak</a></li>
             </ul>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="{{url('/dashboard')}}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Go To</span> Admin Dashboard</a>
+      <a href="{{route('dashboard')}}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Menuju</span> Admin Dashboard</a>
 
     </div>
   </header><!-- End Header -->
@@ -147,11 +147,11 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home') }}">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fprofile') }}">Profile</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fpegawai') }}">Guru & Karyawan</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fsarpras') }}">Sarana & Prasarana</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/home/fevent') }}">Event</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('homepage') }}">Beranda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('profilepage') }}">Profil Sekolah</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('pegawaipage') }}">Guru & Karyawan</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('saranapage') }}">Sarana & Prasarana</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('eventpage') }}">Event</a></li>
             </ul>
           </div>
 

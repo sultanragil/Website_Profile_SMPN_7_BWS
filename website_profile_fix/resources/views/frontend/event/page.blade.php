@@ -1,12 +1,12 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>Events Page - SMPN 7</title>
+  <title>SMPN 7 - Halaman Event</title>
 @endsection
 
 @section('header')
-  <h1 class="display-4 fw-normal">Detail Berita</h1>
-  <p class="lead fw-normal">Halaman ini adalah halaman detail berita sekolah SMPN 7 Bondowoso</p>    
+  <h1 class="display-4 fw-normal">Detail Event</h1>
+  <p class="lead fw-normal">Halaman ini adalah halaman event di sekolah SMPN 7 Bondowoso</p>    
 @endsection
 
 @section('content')
@@ -17,7 +17,6 @@
 
       <div class="section-title">
         <h2>{{$detail->judul}}</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
       </div>
 
       <div class="row">

@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Matpel > Edit Data </title>
+    <title>Dashboard - Edit Data Jabatan </title>
 @endsection
 
 @section('actdash')
@@ -47,12 +47,12 @@
 @section('dashboard')
 
   <div class="pagetitle">
-    <h1>Data Tables</h1>
+    <h1>Data Jabatan</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Jabatan</a></li>
-        <li class="breadcrumb-item active">Edit Data</li>
+        <li class="breadcrumb-item active">Edit Jabatan</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Edit Data Form</h5>
+          <h5 class="card-title">Form Edit Data</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{route('jabatan.update',$courses->id)}}" class="row g-3" >

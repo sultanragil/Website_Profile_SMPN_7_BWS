@@ -25,7 +25,7 @@
         @endforeach
         <br>
         <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-            <button type="submit" class="btn btn-light"><a href="/home/fprofile">Lebih Selengkapnya >></a></button>
+            <button type="submit" class="btn btn-light"><a href="{{route ('profilepage')}}">Lebih Selengkapnya >></a></button>
         </div>
       </div>
     </section><!-- End Profile Section -->
@@ -41,7 +41,7 @@
               <i class="fas fa-user-tie"></i>
               <span data-purecounter-start="0" data-purecounter-end="{{$count1}}" data-purecounter-duration="2" class="purecounter"></span>
               <p><strong>Guru & Karyawan</strong> yang bekerja di sekolah ini.</p>
-              <a href="/home/fpegawai">Find out more &raquo;</a>
+              <a href="{{route ('pegawaipage')}}">Find out more &raquo;</a>
             </div>
           </div>
 
@@ -58,7 +58,7 @@
               <i class="fas fa-building"></i>
               <span data-purecounter-start="0" data-purecounter-end="{{$count3}}" data-purecounter-duration="2" class="purecounter"></span>
               <p><strong>Sarana & Prasarana</strong> yang dilengkapi oleh sekolah ini.</p>
-              <a href="/home/fsarpras">Find out more &raquo;</a>
+              <a href="{{route ('saranapage')}}">Find out more &raquo;</a>
             </div>
           </div>
 
@@ -67,7 +67,7 @@
               <i class="fas fa-newspaper"></i>
               <span data-purecounter-start="0" data-purecounter-end="{{$count4}}" data-purecounter-duration="2" class="purecounter"></span>
               <p><strong>Event</strong> yang diadakan dan terjadi di sekolah ini.</p>
-              <a href="/home/fevent">Find out more &raquo;</a>
+              <a href="{{route ('eventpage')}}">Find out more &raquo;</a>
             </div>
           </div>
 
@@ -124,19 +124,18 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
               <div class="member" data-aos="fade-up" data-aos-delay="100">
                 <div class="member-img">
-                  <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="300" height="300" class="" alt="">
+                  <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="300" height="400" class="" alt="">
                 </div>
                 <div class="member-info">
-                  <h4>{{$item->name}}</h4>
+                  <h5>{{$item->name}}</h5>
                   <span>{{$item->nip}}</span>
-                  <span>{{$item->category}}</span>
-                  <span>{{$item->job_name}}</span>
+                  <span>{{$item->category}} {{$item->job_name}}</span>
                 </div>
               </div>
             </div>
             @endforeach
             <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-              <button type="submit" class="btn btn-light"><a href="/home/fpegawai">Lebih Selengkapnya >></a></button>
+              <button type="submit" class="btn btn-light"><a href="{{route ('pegawaipage')}}">Lebih Selengkapnya >></a></button>
             </div>
 
         </div>
@@ -162,7 +161,7 @@
         </div>
         <br>
         <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-          <button type="submit" class="btn btn-light"><a href="/home/fsarpras">Lebih Selengkapnya >></a></button>
+          <button type="submit" class="btn btn-light"><a href="{{route ('saranapage')}}">Lebih Selengkapnya >></a></button>
         </div>
 
       </div>
@@ -181,33 +180,24 @@
 
             @foreach ($event as $item)
               <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
-                <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-                  <div class="card" style="col-4 col-sm-2 col-md-3 col-xl-4 d-flex align-items-stretch">
-                    <img src="{{ URL::to('backend/assets/img/', $item->cover) }}" width="300" height="300" class="card-img-top" alt="...">
+                <div class="container" data-aos="zoom-in-up" >
+                  <div class="card mb-3">
+                    <a href="{{ route('fevent', $item->id) }}"><img class="card-img-top" width="400" height="200" src="{{ URL::to('backend/assets/img/', $item->cover) }}" alt="Card image cap"></a>
                     <div class="card-body">
-                      <h5 class="card-title">{{$item->judul}}</h5>
-                      <p class="card-text">{!! Str::limit($item->isi,100) !!}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">{{$item->users}}</li>
-                      <li class="list-group-item">{!! Str::words($item->created_at,10) !!}</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="{{ route('fevent', $item->id) }}" class="card-link">Lebih Selengkapnya</a>
+                      <h5 class="card-title" style="text-align: center"><a href="{{ route('fevent', $item->id) }}">{{$item->judul}}</a></h5>
+                      <p class="card-text" style="text-align: justify">{!! Str::limit($item->isi,100) !!} <a href="{{ route('fevent', $item->id) }}" class="card-link">Lebih Selengkapnya</a></p>
+                      <p class="card-text"><small class="text-muted">{{$item->created_at}}</small></p>
+                      <p class="card-text"><small class="text-muted">{{$item->users}}</small></p>
                     </div>
                   </div>
-
-                </div>
-                
+                </div>         
               </div><!-- End Events item -->
             @endforeach
-            
-
           </div>
           <div class="swiper-pagination"></div>
         </div>
         <div class="container" data-aos="zoom-in-up" style="text-align: center; ">
-          <button type="submit" class="btn btn-light"><a href="/home/fevent">Lebih Selengkapnya >></a></button>
+          <button type="submit" class="btn btn-light"><a href="{{route ('eventpage')}}">Lebih Selengkapnya >></a></button>
         </div>
       </div>
     </section><!-- End Events Section -->
@@ -217,7 +207,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact</h2>
+          <h2>Kontak</h2>
         </div>
 
       </div>
@@ -252,7 +242,7 @@
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-time"></i>
-                  <h3>Jam Buka</h3>
+                  <h3>Jadwal Buka</h3>
                   <p>Kunjungi kami<br>{{$item->open}}</p>
                 </div>
               </div>

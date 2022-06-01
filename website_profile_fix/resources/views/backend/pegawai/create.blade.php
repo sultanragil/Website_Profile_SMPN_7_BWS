@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Pegawai </title>
+    <title>Dashboard - Tambah Data Pegawai </title>
 @endsection
 
 @section('actdash')
@@ -51,7 +51,8 @@
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item active">Pegawai & Karyawan</li>
+        <li class="breadcrumb-item"><a href="{{ route('pegawai.index') }}">Pegawai & Karyawan</a></li>
+        <li class="breadcrumb-item active">Tambah Pegawai & Karyawan</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -59,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Create New Data Form</h5>
+          <h5 class="card-title">Form Data Baru</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ route('pegawai.store') }}" class="row g-3" enctype="multipart/form-data">
@@ -78,8 +79,8 @@
               <label for="inputPassword4" class="form-label">Kategori</label>
               <select name="kategori" id="country" class="form-select" required>
                 <option value="" selected disabled>Pilih</option>
-                <option value="guru">Guru</option>
-                <option value="karyawan">Karyawan</option>
+                <option value="Guru">Guru</option>
+                <option value="Karyawan">Karyawan</option>
               </select>
             </div>
             <div class="col-md-4">

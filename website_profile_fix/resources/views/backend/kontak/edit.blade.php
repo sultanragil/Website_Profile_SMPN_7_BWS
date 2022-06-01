@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Kontak > Edit Data </title>
+    <title>Dashboard - Edit Data Kontak</title>
 @endsection
 
 @section('actdash')
@@ -52,7 +52,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('kontak.index') }}">Kontak</a></li>
-        <li class="breadcrumb-item active">Edit Data</li>
+        <li class="breadcrumb-item active">Edit Kontak</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Edit Data Form</h5>
+          <h5 class="card-title">Form Edit Data</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ isset($kontak) ? route('kontak.update',$kontak->id) : route('kontak.store') }}" class="row g-3" enctype="multipart/form-data" >
@@ -75,7 +75,7 @@
               <input type="text" class="form-control" id="inputNanme4" name="alamat" value="{{ isset($kontak) ? $kontak->alamat : '' }}">
             </div>
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Open Hours</label>
+              <label for="inputNanme4" class="form-label">Jadwal Buka</label>
               <input type="text" class="form-control" id="inputNanme4" name="open" value="{{ isset($kontak) ? $kontak->open : '' }}">
             </div>
             <div class="col-10">

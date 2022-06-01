@@ -80,7 +80,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="{{ url('/front') }}">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('homepage') }}">
                 <i class="bi bi-box-arrow-in-left"></i>
                 <span>Go To Homepage</span>
               </a>

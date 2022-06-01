@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - User > Edit Data </title>
+    <title>Dashboard - Edit Data User</title>
 @endsection
 
 @section('actdash')
@@ -47,12 +47,12 @@
 @section('dashboard')
 
   <div class="pagetitle">
-    <h1>Data Tables</h1>
+    <h1>Data User</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User</a></li>
-        <li class="breadcrumb-item active">Edit Data</li>
+        <li class="breadcrumb-item active">Edit User</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Edit Data Form</h5>
+          <h5 class="card-title">Form Edit Data</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{route('user.update',$user->id)}}" class="row g-3" >
@@ -68,7 +68,7 @@
             @method('PUT')
             <input type="hidden" name="id" value="{{ isset($user) ? $user->id : '' }}">
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Your Name</label>
+              <label for="inputNanme4" class="form-label">Nama</label>
               <input type="text" class="form-control" id="inputNanme4" name="name" value="{{ isset($user) ? $user->name : '' }}" required>
             </div>
             <input type="hidden" name="role" value="admin">

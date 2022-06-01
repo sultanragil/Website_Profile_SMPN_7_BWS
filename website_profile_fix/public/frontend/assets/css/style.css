@@ -949,14 +949,14 @@ section {
   font-size: 14px;
   margin-bottom: 0;
 }
-.departments .nav-link:hover h4 {
+.departments .nav-link:hover h5 {
   color: #3fbbc0;
 }
 .departments .nav-link.active {
   background: #f7fcfc;
   border-color: #3fbbc0;
 }
-.departments .nav-link.active h4 {
+.departments .nav-link.active h5 {
   color: #3fbbc0;
 }
 .departments .tab-pane.active {
@@ -964,21 +964,20 @@ section {
   animation: slide-down 0.5s ease-out;
 }
 .departments .tab-pane img {
-  float: left;
-  max-width: 300px;
-  padding: 0 15px 15px 0;
+  float: none;
+  padding: 0 0 0 0;
 }
 @media (max-width: 768px) {
   .departments .tab-pane img {
     float: none;
-    padding: 0 0 15px 0;
+    padding: 0 0 0 0;
     max-width: 100%;
   }
 }
-.departments .tab-pane h3 {
-  font-size: 26px;
+.departments .tab-pane h5 {
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #3fbbc0;
 }
 .departments .tab-pane p {

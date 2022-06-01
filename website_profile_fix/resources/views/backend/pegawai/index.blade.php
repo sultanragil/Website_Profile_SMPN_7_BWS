@@ -79,8 +79,8 @@
                     <th scope="col">Foto</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Jabatan</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Dibuat Saat</th>
+                    <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>

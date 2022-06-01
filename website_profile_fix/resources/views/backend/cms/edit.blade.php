@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Profile </title>
+    <title>Dashboard - Edit CMS Profile </title>
 @endsection
 
 @section('actdash')
@@ -52,7 +52,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('cms.index') }}">CMS Profile</a></li>
-        <li class="breadcrumb-item active">Edit CMS Profil Sekolah</li>
+        <li class="breadcrumb-item active">Edit CMS Profil</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Form Edit Data Sejarah</h5>
+          <h5 class="card-title">Form Edit Data</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ route('cms.update',$profile->id) }}" class="row g-3" enctype="multipart/form-data">
@@ -80,31 +80,31 @@
                 </div>
                 <div class="col-lg-6">
                   <label for="inputEmail4" class="form-label">Nama Kepala Sekolah</label>
-                  <input type="text" class="form-control" id="inputNanme4" name="kepsek_nama" value="{{ isset($profile) ? $profile->kepsek_nama : '' }}">
+                  <input type="text" class="form-control" id="inputNanme4" name="kepsek_nama" value="{{ isset($profile) ? $profile->kepsek_nama : '' }}"><br>
                   <label for="inputEmail4" class="form-label">Foto Kepala Sekolah</label>
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile" name="kepsek_img">
-                  </div>
+                  </div><br>
                   <label for="inputEmail4" class="form-label">Nama Wakil Kepala Sekolah Kesiswaan</label>
-                  <input type="text" class="form-control" id="inputNanme4" name="wakepsek1_nama" value="{{ isset($profile) ? $profile->wakepsek1_nama : '' }}">
+                  <input type="text" class="form-control" id="inputNanme4" name="wakepsek1_nama" value="{{ isset($profile) ? $profile->wakepsek1_nama : '' }}"><br>
                   <label for="inputEmail4" class="form-label">Foto Wakil Kepala Sekolah kesiswaan</label>
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile" name="wakepsek1_img">
-                  </div>
+                  </div><br>
                   <label for="inputEmail4" class="form-label">Nama Wakil Kepala Sekolah Kurikulum</label>
-                  <input type="text" class="form-control" id="inputNanme4" name="wakepsek2_nama" value="{{ isset($profile) ? $profile->wakepsek2_nama : '' }}">
+                  <input type="text" class="form-control" id="inputNanme4" name="wakepsek2_nama" value="{{ isset($profile) ? $profile->wakepsek2_nama : '' }}"><br>
                   <label for="inputEmail4" class="form-label">Foto Wakil Kepala Sekolah</label>
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile" name="wakepsek2_img">
-                  </div>
+                  </div><br>
                   <label for="inputEmail4" class="form-label">Image Logo Sekolah</label>
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile1" name="logo">
-                  </div>
+                  </div><br>
                   <label for="inputEmail4" class="form-label">Image Sekolah</label>
                   <div class="col-10">
                     <input type="file" class="form-control" id="inputFile1" name="sekolah_img">
-                  </div>
+                  </div><br>
                 </div>
               </div>
             </div>

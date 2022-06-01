@@ -77,8 +77,8 @@
                   <th scope="col">Nama</th>
                   <th scope="col">Image</th>
                   <th scope="col">Deskripsi</th>
-                  <th scope="col">Created At</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Dibuat Saat</th>
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>

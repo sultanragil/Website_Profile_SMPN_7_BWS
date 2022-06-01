@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Profile </title>
+    <title>Dashboard - CMS Profile </title>
 @endsection
 
 @section('actdash')

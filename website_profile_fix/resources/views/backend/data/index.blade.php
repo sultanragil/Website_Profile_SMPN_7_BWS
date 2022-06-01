@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Data </title>
+    <title>Dashboard - Data Siswa </title>
 @endsection
 
 @section('actdash')
@@ -78,7 +78,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">Kelas</th>
-                    <th scope="col">Created At</th>
+                    <th scope="col">Dibuat Saat</th>
                   </tr>
                 </thead>
                 <tbody>

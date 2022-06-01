@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Mata Pelajaran </title>
+    <title>Dashboard - Jabatan</title>
 @endsection
 
 @section('actdash')
@@ -75,8 +75,8 @@
               <tr class="table-light">
                 <th scope="col">#</th>
                 <th scope="col">Jabatan</th>
-                <th scope="col">Created At</th>
-                <th scope="col">Action</th>
+                <th scope="col">Dibuat Saat</th>
+                <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>

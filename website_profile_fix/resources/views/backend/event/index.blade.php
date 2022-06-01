@@ -75,10 +75,10 @@
                 <tr class="table-light">
                   <th scope="col">#</th>
                   <th scope="col">Judul</th>
-                  <th scope="col">Cover</th>
-                  <th scope="col">Isi</th>
-                  <th scope="col">Created At</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Deskripsi</th>
+                  <th scope="col">Dibuat Saat</th>
+                  <th scope="col">Aksi</th>
                 </tr>
               </thead>
               <tbody>

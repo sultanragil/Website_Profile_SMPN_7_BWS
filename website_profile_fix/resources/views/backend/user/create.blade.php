@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - User > Create New Data </title>
+    <title>Dashboard - Tambah Data User</title>
 @endsection
 
 @section('actdash')
@@ -54,12 +54,12 @@
 </div>
 @endif
 <div class="pagetitle">
-  <h1>Data Tables</h1>
+  <h1>Data User</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
       <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User</a></li>
-      <li class="breadcrumb-item active">Create Data</li>
+      <li class="breadcrumb-item active">Tambah User</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -67,13 +67,13 @@
   <section class="section">
     <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Create New Data Form</h5>
+          <h5 class="card-title">Form Data Baru</h5>
 
           <!-- Vertical Form -->
           <form method="POST" action="{{ route('user.store') }}" class="row g-3" >
             {!! csrf_field() !!}
             <div class="col-10">
-              <label for="inputNanme4" class="form-label">Your Name</label>
+              <label for="inputNanme4" class="form-label">Nama</label>
               <input type="text" class="form-control" id="inputNanme4" name="name" required>
             </div>
             <input type="hidden" name="role" value="admin">
