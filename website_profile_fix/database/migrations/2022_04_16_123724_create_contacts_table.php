@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('no',15);
-            $table->string('alamat',200);
-            $table->string('gmail',50);
-            $table->string('fb',30);
-            $table->string('yt',200);
-            $table->string('open',100);
+            $table->text('alamat');
+            $table->text('gmail');
+            $table->text('fb');
+            $table->text('yt');
+            $table->text('open');
             //$table->text('map');
             $table->timestamps();
         });

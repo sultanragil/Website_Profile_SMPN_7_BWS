@@ -53,6 +53,9 @@ class SaranaController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'desc' => 'required',
+        ]);
         $sarana = new Sarana;
         $image          = $request->file('image');
         $nama_file      = $image->getClientOriginalName();

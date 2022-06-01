@@ -67,11 +67,11 @@
             @csrf
             <div class="col-md-4">
               <label for="inputNanme4" class="form-label">Judul</label>
-              <input type="text" class="form-control" id="inputNanme4" name="judul">
+              <input type="text" class="form-control" id="inputNanme4" name="judul" required>
             </div>
             <div class="col-md-4">
               <label for="inputEmail4" class="form-label">Cover</label>
-              <input type="file" class="form-control" id="inputEmail4" name="image">
+              <input type="file" class="form-control" id="inputEmail4" name="image" required>
             </div>
             <div class="form-group">
               <textarea name="isi" class="form-control tinymce-editor"></textarea>

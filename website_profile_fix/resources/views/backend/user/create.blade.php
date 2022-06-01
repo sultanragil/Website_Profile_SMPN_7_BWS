@@ -45,7 +45,14 @@
 @endsection
 
 @section('dashboard')
-
+@if (count($errors) > 0)
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="pagetitle">
   <h1>Data Tables</h1>
   <nav>
@@ -67,17 +74,17 @@
             {!! csrf_field() !!}
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="inputNanme4" name="name">
+              <input type="text" class="form-control" id="inputNanme4" name="name" required>
             </div>
             <input type="hidden" name="role" value="admin">
             <input type="hidden" name="image" value="anon100px.png">
             <div class="col-md-4">
               <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" name="email">
+              <input type="email" class="form-control" id="inputEmail4" name="email" required>
             </div>
             <div class="col-md-4">
               <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" name="password">
+              <input type="password" class="form-control" id="inputPassword4" name="password" required>
             </div>
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>

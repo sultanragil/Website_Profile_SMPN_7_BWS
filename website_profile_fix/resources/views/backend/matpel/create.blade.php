@@ -67,7 +67,7 @@
             {!! csrf_field() !!}
             <div class="col-10">
               <label for="inputNanme4" class="form-label">Bidang</label>
-              <input type="text" class="form-control" name="name">
+              <input type="text" class="form-control" name="name" required>
             </div>
             <div class="left-text">
               <button type="submit" class="btn btn-primary btn-sm">Submit</button>

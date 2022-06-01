@@ -31,6 +31,9 @@ class EventController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'isi' => 'required',
+        ]);
         $event = new Event;
         $file           = $request->file('image');
         $nama_file      = $file->getClientOriginalName();
