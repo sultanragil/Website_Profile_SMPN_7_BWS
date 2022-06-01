@@ -1,11 +1,11 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>Pegawai Page - SMPN 7</title>
+  <title>SMPN 7 - Guru & Karyawan</title>
 @endsection
 
 @section('header')
-  <h1 class="display-4 fw-normal">Pegawai</h1>
+  <h1 class="display-4 fw-normal">Guru & Karyawan</h1>
   <p class="lead fw-normal">Halaman ini adalah halaman guru & karyawan sekolah SMPN 7 Bondowoso</h6>    
 @endsection
 
