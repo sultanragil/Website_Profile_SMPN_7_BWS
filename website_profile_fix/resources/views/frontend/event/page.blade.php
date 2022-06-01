@@ -1,7 +1,7 @@
 @extends('frontend.layouts.template')
 
 @section('title')
-  <title>SMPN 7 - Halaman Event</title>
+  <title>SMPN 7 - Event</title>
 @endsection
 
 @section('header')
