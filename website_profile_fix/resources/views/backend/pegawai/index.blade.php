@@ -84,7 +84,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @php $no = 1; @endphp
+                <?php $no = ($pegawai->currentpage()-1)* $pegawai->perpage() + 1;?>
                   @foreach ($pegawai as $item)
                   <tr class="table-light">
                     <th scope="row">{{$no++}}</th>

@@ -82,7 +82,7 @@
                 </tr>
               </thead>
               <tbody>
-                @php $no = 1; @endphp
+                <?php $no = ($sarana->currentpage()-1)* $sarana->perpage() + 1;?>
                 @foreach ($sarana as $item)
                 <tr class="table-light">
                   <th scope="row">{{$no++}}</th>

@@ -82,9 +82,10 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?php $no = ($siswa->currentpage()-1)* $siswa->perpage() + 1;?>
                   @foreach ($siswa as $item)
                   <tr class="table-light">
-                    <th scope="row">{{$item->id}}</th>
+                    <th scope="row">{{$no++}}</th>
                     <td>{{$item->nis}}</td>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->jk}}</td>

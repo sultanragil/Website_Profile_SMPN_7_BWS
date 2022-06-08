@@ -80,7 +80,7 @@
               </tr>
             </thead>
             <tbody>
-              @php $no = 1; @endphp
+            <?php $no = ($courses->currentpage()-1)* $courses->perpage() + 1;?>
               @foreach ($courses as $item)
               <tr class="table-light">
                 <th scope="row">{{$no++}}</th>
@@ -110,7 +110,7 @@
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <div class="col-1">
-                {!! $courses->links()!!}
+                {!! $courses->links() !!}
               </div>
             </ul>
           </nav><!-- End Centered Pagination -->
