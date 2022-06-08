@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Jabatan</title>
+    <title>Dashboard - Bidang</title>
 @endsection
 
 @section('actdash')
@@ -52,11 +52,11 @@
 </div>
 @endif
 <div class="pagetitle">
-    <h1>Data Jabatan</h1>
+    <h1>Data Bidang</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item active">Jabatan</li>
+        <li class="breadcrumb-item active">Bidang</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -67,16 +67,16 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Data Jabatan</h5>
+            <h5 class="card-title">Data Bidang</h5>
 
           <!-- Table Data User -->
           <table class="table table-hover">
             <thead>
               <tr class="table-light">
                 <th scope="col">#</th>
-                <th scope="col">Jabatan</th>
-                <th scope="col">Dibuat Saat</th>
-                <th scope="col">Aksi</th>
+                <th scope="col">Bidang</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>

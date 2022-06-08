@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Edit Data Jabatan </title>
+    <title>Dashboard - Bidang > Edit Data </title>
 @endsection
 
 @section('actdash')
@@ -51,8 +51,8 @@
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Jabatan</a></li>
-        <li class="breadcrumb-item active">Edit Jabatan</li>
+        <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Bidang</a></li>
+        <li class="breadcrumb-item active">Edit Data</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->

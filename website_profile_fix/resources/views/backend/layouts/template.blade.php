@@ -147,7 +147,7 @@
       <li class="nav-item">
         @yield('actmatpel')
           <i class="bi bi-people-fill"></i>
-          <span>Jabatan</span>
+          <span>Bidang</span>
         </a>
       </li><!-- End Mata Pelajaran Page Nav -->
 

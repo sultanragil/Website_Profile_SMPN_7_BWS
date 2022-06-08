@@ -1,7 +1,7 @@
 @extends('backend.layouts.template')
 
 @section('title')
-    <title>Dashboard - Tambah Data Jabatan</title>
+    <title>Dashboard - Bidang > Create New Data </title>
 @endsection
 
 @section('actdash')
@@ -53,6 +53,8 @@
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
       <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Jabatan</a></li>
       <li class="breadcrumb-item active">Tambah Jabatan</li>
+      <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Bidang</a></li>
+      <li class="breadcrumb-item active">Create Data</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->

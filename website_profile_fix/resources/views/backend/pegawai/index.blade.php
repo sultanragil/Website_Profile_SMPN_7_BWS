@@ -78,9 +78,9 @@
                     <th scope="col">NIP</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Kategori</th>
-                    <th scope="col">Jabatan</th>
-                    <th scope="col">Dibuat Saat</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col">Bidang</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -85,7 +85,7 @@
               </select>
             </div>
             <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Jabatan</label>
+                <label for="inputPassword4" class="form-label">Bidang</label>
                 <select name="jabatan" id="state" class="form-select" required>
                     <option value="" selected disabled>Pilih</option>
                     @foreach($job as $item)
