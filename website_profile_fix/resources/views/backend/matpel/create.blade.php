@@ -47,14 +47,12 @@
 @section('dashboard')
 
 <div class="pagetitle">
-  <h1>Data Jabatan</h1>
+  <h1>Data Bidang</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-      <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Jabatan</a></li>
-      <li class="breadcrumb-item active">Tambah Jabatan</li>
       <li class="breadcrumb-item"><a href="{{ route('jabatan.index') }}">Bidang</a></li>
-      <li class="breadcrumb-item active">Create Data</li>
+      <li class="breadcrumb-item active">Tambah Jabatan</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->

@@ -73,7 +73,7 @@
             <div class="carousel-inner">
               @foreach ($carousel as $item)
                 <div class="carousel-item {{$item->id == 1 ? 'active' : '' }}">
-                  <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="1000" height="600" class="d-block w-100" alt="...">
+                  <img src="{{ URL::to('backend/assets/img/', $item->image) }}" width="1000" height="500" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5>{{$item->judul}}</h5>
                     <p>{!! html_entity_decode($item->desc) !!}</p>

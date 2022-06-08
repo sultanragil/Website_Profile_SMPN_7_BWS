@@ -70,7 +70,7 @@
             <h5 class="card-title">Data Siswa</h5>
 
             <!-- Table Data Siswa -->
-            <table class="table table-hover">
+            <table class="table table-hover datatable">
                 <thead>
                   <tr class="table-light">
                     <th scope="col">#</th>

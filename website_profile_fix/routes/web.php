@@ -50,6 +50,7 @@ Route::group(['namespace'=>'Backend'], function () {
         Route::resource('/import_data', '\App\Http\Controllers\Backend\ImportExcelController');
         Route::post('profile/update_password', '\App\Http\Controllers\Backend\ProfileController@update_password');
         Route::post('data/delete', '\App\Http\Controllers\Backend\DataController@delete')->name('data.delete');
+        //Route::post('data/{search}', '\App\Http\Controllers\Backend\DataController@search')->name('search');
         Route::get('/dashboard', '\App\Http\Controllers\Backend\IndexController@index')->name('dashboard');
 
     });

@@ -47,7 +47,7 @@
 @section('dashboard')
 
   <div class="pagetitle">
-    <h1>Data Jabatan</h1>
+    <h1>Data Bidang</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>

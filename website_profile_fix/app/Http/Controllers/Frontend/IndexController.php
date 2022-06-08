@@ -33,7 +33,7 @@ class IndexController extends Controller
         $event = DB::table('events')
                     ->join('users', 'events.id_user', '=', 'users.id')
                     ->select('events.*', 'users.name as users', 'users.role as role')
-                    ->inrandomOrder()->take(5)->get();
+                    ->latest()->take(5)->get();
         return view('frontend.index',
         compact('count1',
                 'count2',

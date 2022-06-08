@@ -18,7 +18,7 @@ class DataController extends Controller
     }
     public function index()
     {
-        $siswa = DB::table('students')->paginate(10);
+        $siswa = DB::table('students')->paginate(25);
         return view('backend.data.index',compact('siswa'));
     }
     public function store(Request $request)
@@ -46,4 +46,5 @@ class DataController extends Controller
         Siswa::truncate();
         return redirect()->route('data.index')->with('success','Data Telah Berhasil Dihapus.');
     }
+
 }

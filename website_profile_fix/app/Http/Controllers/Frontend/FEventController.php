@@ -11,7 +11,7 @@ class FEventController extends Controller
 {
     public function index()
     {   
-        $event = Event::get();
+        $event = Event::latest()->get();
         return view('frontend.event.index',compact('event'));
     }
     public function show($id, Request $request)
