@@ -96,7 +96,7 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
+      
       <a href="{{route('dashboard')}}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Menuju</span> Admin Dashboard</a>
 
     </div>

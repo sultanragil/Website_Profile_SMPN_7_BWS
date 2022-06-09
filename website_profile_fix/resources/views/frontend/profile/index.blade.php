@@ -89,7 +89,7 @@
                         <h3>Pimpinan Sekolah</h3>
                         <div class="container">
                           <div class="row">
-                            <div class="col-4">
+                            <div class="col-sm-4">
                               <div class="card bg-light mb-3" style="text-align: center;">
                                 <img class="card-img-top" height="350" width="250" src="{{ URL::to('backend/assets/img/', $item->kepsek_img) }}" alt="Card image cap">
                                 <div class="card-body">
@@ -98,7 +98,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-4">
                               <div class="card bg-light mb-3" style="text-align: center;">
                                 <img class="card-img-top" height="350" width="250" src="{{ URL::to('backend/assets/img/', $item->wakepsek1_img) }}" alt="Card image cap">
                                 <div class="card-body">
@@ -107,7 +107,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-4">
                               <div class="card bg-light mb-3" style="text-align: center;">
                                 <img class="card-img-top" height="350" width="250" src="{{ URL::to('backend/assets/img/', $item->wakepsek2_img) }}" alt="Card image cap">
                                 <div class="card-body">
