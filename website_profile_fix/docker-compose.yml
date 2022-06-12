@@ -2,6 +2,7 @@ version: '3.7'
 services:
   db:
     image: mysql:5.7
+    container_name: db
     restart: always
     ports:
       - "3306:3306"
@@ -16,7 +17,31 @@ services:
       context: .
       dockerfile: .docker/Dockerfile
     image: 'website_profile_fix'
+    container_name: app
+    restart: always
     ports:
       - 8080:80
     volumes:
       - ./:/var/www/html
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local
